@@ -1,0 +1,90 @@
+@import 'src/app/shared/layout/mixins/mixin.scss';
+@import 'src/app/shared/layout/pattern/color-palette.scss';
+
+
+.container-fluid {
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.home__search-rent {
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  right: 0;
+}
+
+.home__movie {
+  width: 100%;
+  height: 75vh;
+  overflow: hidden;
+
+  @include center;
+}
+
+.home__movie > video{
+  width: 100vw;
+}
+
+
+.home__banner {
+  @include center;
+
+  display: none;
+}
+
+.home__banner > img{
+    max-height: calc(100vh - 25px);
+    position: relative;
+    width: auto;
+    height: auto;
+}
+
+.know-more {
+  background-color: $primary-color-1;
+  color: $second-color-0;
+}
+
+.know-more__miles {
+  display: flex;
+  align-items: center;
+  padding: 40px 40px;
+}
+
+.know-more__miles-link {
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  color: $primary-color-0;
+  cursor: pointer;
+
+}
+
+.know-more__circle {
+  @include center;
+
+  background-color: $primary-color-0;
+  border-radius: 50%;
+  padding: 20px;
+  margin-right: 15px;
+}
+
+// VERIFICAR
+p {
+  margin-bottom: 5px;
+}
+
+@media (max-width: 872px)
+{
+  .home__movie{
+    display: none;
+  }
+
+  .home__banner {
+    display: flex;
+  }
+}
+
+
+
+// CAROUSEL

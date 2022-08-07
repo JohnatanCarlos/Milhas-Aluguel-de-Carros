@@ -1,0 +1,49 @@
+<div class="row search">
+  <div class="col-10">
+    <form action="" class="search__form">
+      <div class="search__form-line d-flex flex-row">
+        <div class="col-6 p-input-icon-right">
+          <input type="text" pInputText placeholder="Digite o local de retirada" />
+          <i class="pi pi-map"></i>
+        </div>
+
+        <div class="col-3 p-input-icon-right">
+          <input type="text" pInputText placeholder="Data" />
+          <i class="pi pi-calendar"></i>
+        </div>
+
+        <div class="col-3 p-input-icon-right">
+          <input type="text" pInputText placeholder="Hora" />
+          <i class="pi pi-clock"></i>
+        </div>
+      </div>
+
+
+      <div *ngIf="!showWithdrawal" class="search__form-line d-flex flex-row">
+        <div class="col-6 p-input-icon-right">
+          <input type="text" pInputText placeholder="Digite o local de retirada" />
+          <i class="pi pi-map"></i>
+        </div>
+
+        <div class="col-3 p-input-icon-right">
+          <input type="text" pInputText placeholder="Data" />
+          <i class="pi pi-calendar"></i>
+        </div>
+
+        <div class="col-3 p-input-icon-right">
+          <input type="text" pInputText placeholder="Hora" />
+          <i class="pi pi-clock"></i>
+        </div>
+      </div>
+    </form>
+
+    <div class="form-check form-switch text-white">
+      <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked [(ngModel)]="showWithdrawal"/>
+      <label class="form-check-label" for="flexSwitchCheckChecked">DEVOLUÇÃO NA MESMA LOJA</label >
+    </div>
+  </div>
+
+  <div class="col-2 search__button">
+    <button pButton type="button" class="p-button-raised">CONTINUAR</button>
+  </div>
+</div>

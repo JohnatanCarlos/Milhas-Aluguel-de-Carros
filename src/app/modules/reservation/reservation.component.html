@@ -1,0 +1,306 @@
+<div class="container">
+  <p-steps [model]="items" [activeIndex]="currentStep"></p-steps>
+
+  <div class="row">
+    <h3>Selecione o melhor grupo de carro e tarifa para você</h3>
+  </div>
+
+  <div class="row pb-5">
+    <!-- <div class="col-7 card">
+      <div class="row">
+        <div class="col-6 card__vehicle">
+          <div class="text-center">
+            <p><strong>Grupo B - Compacto Com Ar</strong></p>
+            <img src="https://img0.icarros.com/dbimg/imgnoticia/4/27348_1" alt="" style="width: 300px; height: 180;">
+            <p>Veículo similar a: Renault Kwid 1.0, Fiat Mobi 1.0, Fiat Uno 1.0, dentre outros.</p>
+            <p><small>Sua reserva garante um dos carros desse grupo.<br> Modelo sujeito à disponibilidade da agência.</small></p>
+            <a href="#">Mais detalhes</a>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card__select">
+            <div class="d-flex justify-content-between">
+              <p>Oferta Promo</p>
+              <div class="card__button-circle">
+                <i class="pi pi-angle-double-right" style="font-size: 19px;"></i>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="col-4"><strong>R$ 80,00</strong></div>
+              <div class="col-8">
+                <p>Km Livre</p>
+                <p>Cancelamento Grátis até 24 horas da retirada</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><br> -->
+
+    <div class="col-7">
+      <div class="row list-card">
+        <div class="col-6 card__vehicle">
+          <div class="text-center">
+            <p><strong>Grupo B - Compacto Com Ar</strong></p>
+
+            <p-carousel [value]="products" orientation="vertical">
+              <ng-template let-products pTemplate="item">
+                <img src="{{ products.image }}" alt="" width="100%" />
+                <p>{{ products.name }}</p>
+              </ng-template>
+            </p-carousel>
+
+            <!-- <img src="https://img0.icarros.com/dbimg/imgnoticia/4/27348_1" alt="" style="width: 300px; height: 180;"> -->
+            <p>
+              Veículo similar a: Renault Kwid 1.0, Fiat Mobi 1.0, Fiat Uno 1.0,
+              dentre outros.
+            </p>
+            <p>
+              <small
+                >Sua reserva garante um dos carros desse grupo.<br />
+                Modelo sujeito à disponibilidade da agência.</small
+              >
+            </p>
+            `
+
+            <div class="accordion accordion-flush" id="accordionFlush">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="flush-headingOne">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#flush-collapseOne"
+                    aria-expanded="false"
+                    aria-controls="flush-collapseOne"
+                    (click)="changeTitleAccordion()"
+                  >
+                    {{ titleAccordion }}
+                  </button>
+                </h2>
+                <div
+                  id="flush-collapseOne"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="flush-headingOne"
+                  data-bs-parent="#accordionFlush"
+                >
+                  <div class="d-flex accordion-body">
+                    <div class="col-6 card__vehicle-details">
+                      <i class="pi pi-times"></i>
+                      <span>Porta</span>
+                    </div>
+                    <div class="col-6 card__vehicle-details">
+                      <i class="pi pi-sun"></i>
+                      <span>Ar-condicionado</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="card__select">
+            <div class="d-flex justify-content-between">
+              <p>Oferta Promo</p>
+              <div class="card__button-circle">
+                <i class="pi pi-angle-double-right" style="font-size: 19px"></i>
+              </div>
+            </div>
+            <div class="d-flex">
+              <div class="col-4"><strong>R$ 80,00</strong></div>
+              <div class="col-8">
+                <p>Km Livre</p>
+                <p>Cancelamento Grátis até 24 horas da retirada</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Adicionais -->
+      <h2>Adicionais</h2>
+      <div class="row">
+        <div class="col-12 adicionais-card">
+          <i class="pi pi-times"> Proteção do carro</i>
+
+          <div class="d-flex">
+            <div style="margin-right: 10px">R$ 25,00 / dia</div>
+            <input class="form-check-input" type="checkbox" />
+          </div>
+        </div>
+
+        <div class="col-12 adicionais-card">
+          <i class="pi pi-times"> Cobertura para terceiros</i>
+
+          <div class="d-flex">
+            <div style="margin-right: 10px">R$ 10,00 / dia</div>
+            <input class="form-check-input" type="checkbox" />
+          </div>
+        </div>
+
+        <div class="col-12 adicionais-card">
+          <i class="pi pi-times"> Condutor Jovem</i>
+
+          <div class="d-flex">
+            <div style="margin-right: 10px">R$ 10,00 / dia</div>
+            <input class="form-check-input" type="checkbox" />
+          </div>
+        </div>
+
+        <div class="col-12 adicionais-card">
+          <i class="pi pi-times"> Limpeza Garantida</i>
+
+          <div class="d-flex">
+            <div style="margin-right: 10px">R$ 10,00 / dia</div>
+            <input class="form-check-input" type="checkbox" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Acessórios -->
+      <h2>Acessórios</h2>
+      <div class="row">
+        <div class="col-6 acessorios-card">
+          <div>
+            <i class="pi pi-times"> Cadeira de bebê</i>
+            <p>R$ 25,00 / dia (unidade)</p>
+          </div>
+          <div>
+            <i class="pi pi-minus" (click)="countNumber('rem')"></i>
+            <span class="h4"><strong> {{ count }} </strong></span>
+            <i class="pi pi-plus" (click)="countNumber('add')"></i>
+          </div>
+        </div>
+
+        <div class="col-6 acessorios-card">
+          <div>
+            <i class="pi pi-times"> Assento de elevação</i>
+            <p>R$ 25,00 / dia (unidade)</p>
+          </div>
+          <div>
+            <i class="pi pi-minus" (click)="countNumber('rem')"></i>
+            <span class="h4"><strong> {{ count }} </strong></span>
+            <i class="pi pi-plus" (click)="countNumber('add')"></i>
+          </div>
+        </div>
+
+        <div class="col-6 acessorios-card">
+          <div>
+            <i class="pi pi-times"> Bebê conforto</i>
+            <p>R$ 25,00 / dia (unidade)</p>
+          </div>
+          <div>
+            <i class="pi pi-minus" (click)="countNumber('rem')"></i>
+            <span class="h4"><strong> {{ count }} </strong></span>
+            <i class="pi pi-plus" (click)="countNumber('add')"></i>
+          </div>
+        </div>
+
+        <div class="col-6 acessorios-card">
+          <div>
+            <i class="pi pi-times"> Localiza Way</i>
+            <p>R$ 25,00 / dia (unidade)</p>
+          </div>
+          <div>
+            <i class="pi pi-minus" (click)="countNumber('rem')"></i>
+            <span class="h4"><strong> {{ count }} </strong></span>
+            <i class="pi pi-plus" (click)="countNumber('add')"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESUMO DA RESERVA -->
+    <div class="col-5">
+      <div class="resumo__reserva-field">
+        <div class="resumo__reserva-title text-center">
+          <h4>Resumo da Reserva</h4>
+        </div>
+
+        <div class="resumo__reserva">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h5>Retirada</h5>
+              <strong>30 de Junho de 2022 às 16:00</strong> <br />
+              Ag Aerop Recife Aluguel Mensal
+            </div>
+            <p class="resumo__reserva-text_underline">Editar</p>
+          </div>
+          <hr />
+        </div>
+
+        <div class="resumo__reserva">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h5>Develução</h5>
+              <strong>12 de Junho de 2022 às 16:00</strong> <br />
+              Ag Aerop Recife Aluguel Mensal
+            </div>
+            <p class="resumo__reserva-text_underline">Editar</p>
+          </div>
+          <hr />
+        </div>
+
+        <div class="resumo__reserva">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <h5>Grupo</h5>
+              <strong>Grupo B - Compacto Com Ar</strong> <br />
+              Renault Kwid 1.0 ou similar
+            </div>
+            <p class="resumo__reserva-text_underline">Editar</p>
+          </div>
+          <hr />
+        </div>
+
+        <div class="resumo__reserva">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <strong>Diárias</strong><br />
+              22x R$80,00
+            </div>
+            <p>
+              <strong>Total</strong><br />
+              R$ 1.760.00
+            </p>
+          </div>
+        </div>
+
+        <div class="resumo__reserva">
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div>
+              <strong>Proteções</strong> <br />
+              Proteção do carro<br />
+              22 diárias x R$ 28,00
+            </div>
+            <p>R$ 616,00</p>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div>
+              Proteção do carro<br />
+              22 diárias x R$ 10,00
+            </div>
+            <p class="text-center">R$ 220,00</p>
+          </div>
+
+          <div class="d-flex justify-content-between align-items-center">
+            <div>Taxa de aluguel</div>
+            <p>R$ 311,52</p>
+          </div>
+        </div>
+
+        <div class="resumo__reserva-title text-end">
+          <p>Valor total previsto</p>
+          <h2><strong>R$ 2.907,52</strong></h2>
+          <p>Em até 6x de R$ 484,59</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-7 d-flex flex-row-reverse">
+      <button pButton type="button" class="p-button-raised">CONTINUAR</button>
+    </div>
+  </div>
+</div>

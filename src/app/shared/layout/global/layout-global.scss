@@ -1,0 +1,11 @@
+@import 'src/app/shared/layout/pattern/color-palette.scss';
+
+.p-menuitem-link{
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background: $primary-color-0 !important;
+  color: #ffffff;
+}

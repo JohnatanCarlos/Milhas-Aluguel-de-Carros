@@ -1,0 +1,38 @@
+@import 'src/app/shared/layout/pattern/color-palette.scss';
+@import 'src/app/shared/layout/mixins/mixin.scss';
+
+.container {
+  @include center-between;
+}
+
+.header {
+  background-color: $second-color-1;
+  padding: 15px 0;
+
+  &__logo {
+    width: 240px;
+    height: 62px;
+  }
+
+  &__acesso {
+    font-size: 13px;
+    color: $primary-color-1;
+    cursor: pointer;
+  }
+
+  &__icon {
+    font-size: 16px;
+    padding-right: 10px;
+  }
+
+
+}
+
+@media (max-width: 600px)
+{
+  .header__logo {
+    width: 140px;
+    height: 35px;
+  }
+}
+

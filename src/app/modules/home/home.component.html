@@ -1,0 +1,71 @@
+<div class="container-fluid home">
+  <!-- FORMULARIO DE BUSCA -->
+  <div class="container home__search-rent">
+    <app-search-rent></app-search-rent>
+  </div>
+
+  <!-- BANNER VIDEO DESKTOP-->
+  <div class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active home__movie">
+        <video autoplay muted loop>
+          <source src="./../../../assets/movies/comercial_banner.webm" type="video/webm" />
+        </video>
+      </div>
+    </div>
+  </div>
+
+  <!-- BANNER MOBILE -->
+  <div class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active home__banner">
+        <img src="./../../../assets/imgs/tv_milhas.png" alt="">
+      </div>
+    </div>
+  </div>
+
+  <!-- CONHEÇA NOSSA FROTA -->
+  <div class="meet-fleet">
+    <div class="text-center">
+      <h4>Conheça a nossa Frota</h4>
+      <p>As melhores condições para você reservar e aproveitar</p>
+    </div>
+
+    <!--CAROUSEL -->
+    <div style="position: relative !important;">
+      <app-carousel></app-carousel>
+    </div>
+  </div>
+
+  <!-- SAIBA MAIS -->
+  <div class="container-fluid know-more">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 know-more__miles">
+          <div class="know-more__circle">
+            <i class="pi pi-ticket" style="font-size: 3rem;"></i>
+          </div>
+          <div>
+            <p>PROGRAMA MILHAS</p>
+            <p>O JEITO MAIS SIMPLES DE ECONOMIZAR NAS PROXIMAS VIAGENS</p>
+
+            <p class="know-more__miles-link">SAIBA MAIS</p>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-12 col-md-12 col-lg-6 know-more__miles">
+          <div class="know-more__circle">
+            <i class="pi pi-shield" style="font-size: 3rem;"></i>
+          </div>
+          <div>
+            <p>RETIRADA RAPIDA</p>
+            <p>O JEITO MAIS RÁPIDO E SEGURO DE RETIRAR UM CARRO​​ ONDE VOCE ESTIVER</p>
+
+            <p class="know-more__miles-link">SAIBA MAIS</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
