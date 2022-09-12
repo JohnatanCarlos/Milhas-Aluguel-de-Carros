@@ -2,7 +2,7 @@
   <p-steps [model]="items" [activeIndex]="currentStep"></p-steps>
 
   <div class="row">
-    <h3>Selecione o melhor grupo de carro e tarifa para você</h3>
+    <h3>{{title}}</h3>
   </div>
 
   <div class="row pb-5">
@@ -118,98 +118,12 @@
         </div>
       </div>
 
-      <!-- Adicionais -->
-      <h2>Adicionais</h2>
-      <div class="row">
-        <div class="col-12 adicionais-card">
-          <i class="pi pi-times"> Proteção do carro</i>
+       <!-- ADICIONAIS -->
+      <app-rates-additional></app-rates-additional>
 
-          <div class="d-flex">
-            <div style="margin-right: 10px">R$ 25,00 / dia</div>
-            <input class="form-check-input" type="checkbox" />
-          </div>
-        </div>
-
-        <div class="col-12 adicionais-card">
-          <i class="pi pi-times"> Cobertura para terceiros</i>
-
-          <div class="d-flex">
-            <div style="margin-right: 10px">R$ 10,00 / dia</div>
-            <input class="form-check-input" type="checkbox" />
-          </div>
-        </div>
-
-        <div class="col-12 adicionais-card">
-          <i class="pi pi-times"> Condutor Jovem</i>
-
-          <div class="d-flex">
-            <div style="margin-right: 10px">R$ 10,00 / dia</div>
-            <input class="form-check-input" type="checkbox" />
-          </div>
-        </div>
-
-        <div class="col-12 adicionais-card">
-          <i class="pi pi-times"> Limpeza Garantida</i>
-
-          <div class="d-flex">
-            <div style="margin-right: 10px">R$ 10,00 / dia</div>
-            <input class="form-check-input" type="checkbox" />
-          </div>
-        </div>
-      </div>
-
-      <!-- Acessórios -->
-      <h2>Acessórios</h2>
-      <div class="row">
-        <div class="col-6 acessorios-card">
-          <div>
-            <i class="pi pi-times"> Cadeira de bebê</i>
-            <p>R$ 25,00 / dia (unidade)</p>
-          </div>
-          <div>
-            <i class="pi pi-minus" (click)="countNumber('rem')"></i>
-            <span class="h4"><strong> {{ count }} </strong></span>
-            <i class="pi pi-plus" (click)="countNumber('add')"></i>
-          </div>
-        </div>
-
-        <div class="col-6 acessorios-card">
-          <div>
-            <i class="pi pi-times"> Assento de elevação</i>
-            <p>R$ 25,00 / dia (unidade)</p>
-          </div>
-          <div>
-            <i class="pi pi-minus" (click)="countNumber('rem')"></i>
-            <span class="h4"><strong> {{ count }} </strong></span>
-            <i class="pi pi-plus" (click)="countNumber('add')"></i>
-          </div>
-        </div>
-
-        <div class="col-6 acessorios-card">
-          <div>
-            <i class="pi pi-times"> Bebê conforto</i>
-            <p>R$ 25,00 / dia (unidade)</p>
-          </div>
-          <div>
-            <i class="pi pi-minus" (click)="countNumber('rem')"></i>
-            <span class="h4"><strong> {{ count }} </strong></span>
-            <i class="pi pi-plus" (click)="countNumber('add')"></i>
-          </div>
-        </div>
-
-        <div class="col-6 acessorios-card">
-          <div>
-            <i class="pi pi-times"> Localiza Way</i>
-            <p>R$ 25,00 / dia (unidade)</p>
-          </div>
-          <div>
-            <i class="pi pi-minus" (click)="countNumber('rem')"></i>
-            <span class="h4"><strong> {{ count }} </strong></span>
-            <i class="pi pi-plus" (click)="countNumber('add')"></i>
-          </div>
-        </div>
-      </div>
     </div>
+
+
 
     <!-- RESUMO DA RESERVA -->
     <div class="col-5">
@@ -299,8 +213,8 @@
       </div>
     </div>
 
-    <div class="col-7 d-flex flex-row-reverse">
+    <!-- <div class="col-7 d-flex flex-row-reverse">
       <button pButton type="button" class="p-button-raised">CONTINUAR</button>
-    </div>
+    </div> -->
   </div>
 </div>

@@ -22,7 +22,7 @@
   @include center;
 }
 
-.home__movie > video{
+.home__movie>video {
   width: 100vw;
 }
 
@@ -33,11 +33,15 @@
   display: none;
 }
 
-.home__banner > img{
-    max-height: calc(100vh - 25px);
-    position: relative;
-    width: auto;
-    height: auto;
+.home__banner>img {
+  max-height: calc(100vh - 25px);
+  position: relative;
+  width: auto;
+  height: auto;
+}
+
+.meet-fleet {
+  padding: 300px;
 }
 
 .know-more {
@@ -74,9 +78,8 @@ p {
   margin-bottom: 5px;
 }
 
-@media (max-width: 872px)
-{
-  .home__movie{
+@media (max-width: 872px) {
+  .home__movie {
     display: none;
   }
 

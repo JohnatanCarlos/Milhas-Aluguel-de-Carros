@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { SearchRentModule } from '../../shared/components/search-rent/search-rent.module';
 import { HomeComponent } from './home.component';
-import { CarouselModule } from './shared/components/carousel/carousel.module';
+import { AppCarouselModule } from './shared/components/carousel/carousel.module';
 
 
 @NgModule({
@@ -11,7 +11,7 @@ import { CarouselModule } from './shared/components/carousel/carousel.module';
   imports: [
     CommonModule,
     SearchRentModule,
-    CarouselModule
+    AppCarouselModule
   ],
   exports: [
     HomeComponent

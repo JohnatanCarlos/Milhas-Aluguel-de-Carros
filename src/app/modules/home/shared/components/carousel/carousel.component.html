@@ -1,27 +1,13 @@
-<div class="items" #items>
-  <div class="item active" #item>
-    <img
-      src="https://www.chevrolet.com.br/content/dam/chevrolet/mercosur/brazil/portuguese/index/cars/cars-subcontent/02-images/cruze-sport6-rs-carros.jpg?imwidth=960"
-    />
-  </div>
-  <div class="item next">
-    <img
-      src="https://www.tvmaisabc.com.br/wp-content/uploads/2022/03/Os-carros-da-Fiat-sao-economicos.jpg"
-    />
-  </div>
-  <div class="item">
-    <img src="https://img0.icarros.com/dbimg/imgnoticia/4/27348_1" />
-  </div>
-  <div class="item">
-    <img src="https://img0.icarros.com/dbimg/imgnoticia/4/27348_1" />
-  </div>
-  <div class="item prev">
-    <img
-      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJAdWwK3vLdNatlGdPco-AhnANWsb2YTviZw&usqp=CAU"
-    />
-  </div>
-  <div class="button-container" #buttons>
-    <div class="button"><</div>
-    <div class="button">></div>
-  </div>
-</div>
+<p-carousel [value]="products" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="5000">
+  <ng-template let-product pTemplate="item">
+      <div class="product-item">
+          <div class="product-item-content">
+              <div class="d-flex justify-content-center align-items-center flex-column">
+                  <img src="{{product.image}}" alt="" width="400px">
+                  <h4 class="p-mb-1">{{product.group}} - {{product.subGroup}}</h4>
+                  <p><small>{{product.description}}</small></p>
+              </div>
+          </div>
+      </div>
+  </ng-template>
+</p-carousel>

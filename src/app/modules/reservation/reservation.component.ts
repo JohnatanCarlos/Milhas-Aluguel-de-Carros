@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reservation',
@@ -13,13 +14,14 @@ export class ReservationComponent implements OnInit {
   items: any[];
   currentStep: number
   products: any[];
+  title: string;
 
-  count = 0;
 
-  constructor() { }
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.currentStep = 1;
+    this.setTitle(this.router.url);
 
     this.items = [
       {label: 'Local, Data e Hora da Reserva'},
@@ -41,6 +43,18 @@ export class ReservationComponent implements OnInit {
 
   }
 
+  setTitle(urlCurrent: string): void {
+    if(urlCurrent == '/reservas/passo-2'){
+      this.currentStep = 1;
+      this.title = 'Selecione o melhor grupo de carro e tarifa para você';
+    }else if(urlCurrent == '/reservas/passo-3'){
+      this.currentStep = 2;
+      this.title = 'Tarifas e Adicionais';
+    }else{
+      this.title = 'Default';
+    }
+  }
+
   changeTitleAccordion(){
     this.hasDetails = !this.hasDetails;
   }
@@ -49,13 +63,6 @@ export class ReservationComponent implements OnInit {
     return this.hasDetails ? 'Menos detalhes' : 'Mais detalhes';
   }
 
-  countNumber(acao: string){
-    if(acao == 'add'){
-      this.count ++
-    }else if(acao == 'rem'){
-      this.count --
-    }
 
-  }
 
 }
