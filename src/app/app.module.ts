@@ -9,6 +9,7 @@ import { HomeModule } from './modules/home/home.module';
 import { ReservationModule } from './modules/reservation/reservation.module';
 import { FooterModule } from './shared/components/footer/footer.module';
 import { HeaderModule } from './shared/components/header/header.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { HeaderModule } from './shared/components/header/header.module';
     HeaderModule,
     FooterModule,
     ReservationModule,
-    RegisterModule
+    RegisterModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

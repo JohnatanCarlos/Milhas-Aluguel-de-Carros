@@ -1,0 +1,11 @@
+<div class="acessorios-card">
+  <div>
+    <i class="pi pi-times">{{title}}</i>
+    <p>R$ {{value}} / dia (unidade)</p>
+  </div>
+  <div>
+    <i class="pi pi-minus" (click)="quantity('minus')"></i>
+    <span class="h4"><strong>{{countValue}}</strong></span>
+    <i class="pi pi-plus" (click)="quantity('plus')"></i>
+  </div>
+</div>
