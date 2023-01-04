@@ -10,12 +10,11 @@ import { Router } from '@angular/router';
 
 export class ReservationComponent implements OnInit {
 
-  hasDetails = false
   items: any[];
   currentStep: number
   products: any[];
+  detailsVehicle: any[];
   title: string;
-
 
 
   constructor(private router: Router) { }
@@ -29,6 +28,17 @@ export class ReservationComponent implements OnInit {
       {label: 'Tarifas e Adicionais'},
       {label: 'Dados Cadastrais e Pessoais '},
     ];
+
+    this.detailsVehicle = [
+      {title: '4 portas'},
+      {title: 'Ar-condicionado'},
+      {title: 'Vidro elétrico'},
+      {title: 'Trava elétrica'},
+      {title: 'Dir. Hidráulica'},
+      {title: 'Air bag'},
+      {title: 'ABS'},
+      {title: '5 pessoas'},
+    ]
 
     this.products = [
       {
@@ -54,15 +64,5 @@ export class ReservationComponent implements OnInit {
       this.title = 'Default';
     }
   }
-
-  changeTitleAccordion(){
-    this.hasDetails = !this.hasDetails;
-  }
-
-  get titleAccordion(): string {
-    return this.hasDetails ? 'Menos detalhes' : 'Mais detalhes';
-  }
-
-
 
 }

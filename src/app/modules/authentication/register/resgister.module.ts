@@ -1,39 +1,31 @@
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {InputTextModule} from 'primeng/inputtext';
-import {ButtonModule} from 'primeng/button';
-import {CheckboxModule} from 'primeng/checkbox';
-import {RadioButtonModule} from 'primeng/radiobutton';
-import {RippleModule} from 'primeng/ripple';
-import { DropdownModule } from "primeng/dropdown";
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RegisterComponent } from './register.component';
-import { CalendarModule } from "primeng/calendar";
-import { ChipsModule } from "primeng/chips";
-import { InputTextareaModule } from "primeng/inputtextarea";
-import { InputMaskModule } from "primeng/inputmask";
-import { InputNumberModule } from "primeng/inputnumber";
-
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    InputTextModule,
-    CalendarModule,
-    ChipsModule,
-    InputMaskModule,
-    InputNumberModule,
-    InputTextareaModule,
-    InputTextModule,
-		CheckboxModule,
-		ButtonModule,
-		RadioButtonModule,
-    RippleModule,
-    DropdownModule,
     FormsModule,
-    RadioButtonModule,
+    ReactiveFormsModule,
+    MatInputModule,
+    MatIconModule,
+    MatSelectModule,
+    MatRadioModule,
+    MatButtonModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    ButtonModule,
   ],
   exports: [],
   declarations: [RegisterComponent],

@@ -10,7 +10,7 @@
       <div class="row">
         <div class="col-6 card__vehicle">
           <div class="text-center">
-            <p><strong>Grupo B - Compacto Com Ar</strong></p>
+            <p>Grupo B - Compacto Com Ar</strong></p>
             <img src="https://img0.icarros.com/dbimg/imgnoticia/4/27348_1" alt="" style="width: 300px; height: 180;">
             <p>Veículo similar a: Renault Kwid 1.0, Fiat Mobi 1.0, Fiat Uno 1.0, dentre outros.</p>
             <p><small>Sua reserva garante um dos carros desse grupo.<br> Modelo sujeito à disponibilidade da agência.</small></p>
@@ -50,56 +50,26 @@
               </ng-template>
             </p-carousel>
 
-            <!-- <img src="https://img0.icarros.com/dbimg/imgnoticia/4/27348_1" alt="" style="width: 300px; height: 180;"> -->
-            <p>
-              Veículo similar a: Renault Kwid 1.0, Fiat Mobi 1.0, Fiat Uno 1.0,
-              dentre outros.
-            </p>
-            <p>
-              <small
-                >Sua reserva garante um dos carros desse grupo.<br />
-                Modelo sujeito à disponibilidade da agência.</small
-              >
-            </p>
-            `
-
-            <div class="accordion accordion-flush" id="accordionFlush">
-              <div class="accordion-item">
-                <h2 class="accordion-header" id="flush-headingOne">
-                  <button
-                    class="accordion-button collapsed"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target="#flush-collapseOne"
-                    aria-expanded="false"
-                    aria-controls="flush-collapseOne"
-                    (click)="changeTitleAccordion()"
-                  >
-                    {{ titleAccordion }}
-                  </button>
-                </h2>
-                <div
-                  id="flush-collapseOne"
-                  class="accordion-collapse collapse"
-                  aria-labelledby="flush-headingOne"
-                  data-bs-parent="#accordionFlush"
-                >
-                  <div class="d-flex accordion-body">
-                    <div class="col-6 card__vehicle-details">
-                      <i class="pi pi-times"></i>
-                      <span>Porta</span>
-                    </div>
-                    <div class="col-6 card__vehicle-details">
-                      <i class="pi pi-sun"></i>
-                      <span>Ar-condicionado</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="mb-3">
+              <p class="h6 mb-2 text-decoration-underline ">Sujeito à Disponibilidade</p>
+              <p class="mb-2">
+                Veículo similar a: Renault Kwid 1.0, Fiat Mobi 1.0, Fiat Uno 1.0,
+                dentre outros.
+              </p>
+              <p class="fw-lighter">
+                <small>
+                  Sua reserva garante um dos carros desse grupo.<br />
+                    Modelo sujeito à disponibilidade da agência.
+                </small>
+              </p>
             </div>
+
+            <!-- DETALHES DO VEICULO -->
+            <app-accordion-card [detailsVehicle]="detailsVehicle"></app-accordion-card>
+            <p><small>*A taxa de aluguel (12%) ainda não está inclusa nesse valor.</small></p>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-6" routerLink="/reservas/passo-3">
           <div class="card__select">
             <div class="d-flex justify-content-between">
               <p>Oferta Promo</p>
@@ -108,17 +78,17 @@
               </div>
             </div>
             <div class="d-flex">
-              <div class="col-4"><strong>R$ 80,00</strong></div>
-              <div class="col-8">
-                <p>Km Livre</p>
-                <p>Cancelamento Grátis até 24 horas da retirada</p>
+              <div class="col-4 mr-3 card__select-value"><strong>R$ 89,90</strong></div>
+              <div class="col-8 card__select-description">
+                <div><i class="pi pi-check"></i><small> Km Livre</small></div>
+                <div><i class="pi pi-check"></i> <small> Cancelamento Grátis até 24 horas da retirada</small></div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-       <!-- ADICIONAIS -->
+      <!-- ADICIONAIS -->
       <app-rates-additional></app-rates-additional>
 
     </div>
@@ -129,44 +99,44 @@
     <div class="col-5">
       <div class="resumo__reserva-field">
         <div class="resumo__reserva-title text-center">
-          <h4>Resumo da Reserva</h4>
+          <p class="h5 fw-bold">Resumo da Reserva</p>
         </div>
 
         <div class="resumo__reserva">
           <div class="d-flex justify-content-between align-items-center">
             <div>
-              <h5>Retirada</h5>
+              <p class="h6">Retirada</p>
               <strong>30 de Junho de 2022 às 16:00</strong> <br />
               Ag Aerop Recife Aluguel Mensal
             </div>
             <p class="resumo__reserva-text_underline">Editar</p>
           </div>
-          <hr />
         </div>
+        <p-divider></p-divider>
 
         <div class="resumo__reserva">
           <div class="d-flex justify-content-between align-items-center">
             <div>
-              <h5>Develução</h5>
+              <p class="h6">Develução</p>
               <strong>12 de Junho de 2022 às 16:00</strong> <br />
               Ag Aerop Recife Aluguel Mensal
             </div>
             <p class="resumo__reserva-text_underline">Editar</p>
           </div>
-          <hr />
         </div>
+        <p-divider></p-divider>
 
         <div class="resumo__reserva">
           <div class="d-flex justify-content-between align-items-center">
             <div>
-              <h5>Grupo</h5>
+              <p class="h6">Grupo</p>
               <strong>Grupo B - Compacto Com Ar</strong> <br />
               Renault Kwid 1.0 ou similar
             </div>
             <p class="resumo__reserva-text_underline">Editar</p>
           </div>
-          <hr />
         </div>
+        <p-divider></p-divider>
 
         <div class="resumo__reserva">
           <div class="d-flex justify-content-between align-items-center">
@@ -199,22 +169,31 @@
             <p class="text-center">R$ 220,00</p>
           </div>
 
+          <div class="d-flex justify-content-between align-items-center mb-2">
+            <div>
+              <strong>Adicionais</strong> <br />
+              Bebê conforto<br />
+              1 und. x 1 diária x R$ 25,00
+            </div>
+            <p>R$ 25,00</p>
+          </div>
+
           <div class="d-flex justify-content-between align-items-center">
-            <div>Taxa de aluguel</div>
+            <div>Taxa de aluguel ( 12% )</div>
             <p>R$ 311,52</p>
           </div>
         </div>
 
         <div class="resumo__reserva-title text-end">
-          <p>Valor total previsto</p>
-          <h2><strong>R$ 2.907,52</strong></h2>
-          <p>Em até 6x de R$ 484,59</p>
+          <p class="fw-bold">Valor total previsto</p>
+          <p class="h1 fw-bold">R$ 2.907,52</p>
+          <p class="fw-bold">Em até 6x de R$ 484,59</p>
         </div>
       </div>
     </div>
 
-    <!-- <div class="col-7 d-flex flex-row-reverse">
+    <div class="col-7 d-flex flex-row-reverse">
       <button pButton type="button" class="p-button-raised">CONTINUAR</button>
-    </div> -->
+    </div>
   </div>
 </div>

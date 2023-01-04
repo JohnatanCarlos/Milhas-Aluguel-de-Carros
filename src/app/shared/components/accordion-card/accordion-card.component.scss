@@ -1,0 +1,29 @@
+@import 'src/app/shared/layout/mixins/mixin.scss';
+@import 'src/app/shared/layout/pattern/color-palette.scss';
+
+.accordion-btn {
+  @include center-between;
+
+  background-color: transparent;
+  border: solid 1px #e2e1e1;
+  padding: 10px;
+  width: 100%;
+}
+
+.accordion-card {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #F5F5F5;
+  margin: 10px 0;
+  padding: 10px 5px;
+  height: auto;
+
+  i {
+    font-size: 18px;
+  }
+
+  span {
+    padding: 0 10px;
+  }
+}

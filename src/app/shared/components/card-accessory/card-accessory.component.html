@@ -1,11 +1,15 @@
 <div class="acessorios-card">
-  <div>
-    <i class="pi pi-times">{{title}}</i>
-    <p>R$ {{value}} / dia (unidade)</p>
+  <div class="acessorios-card__info">
+    <div class="acessorios-card__info-title">
+      <i class="pi pi-qrcode"></i>
+      <span>{{title}}</span>
+    </div>
+    <p>R$ <span>{{value}}</span> / dia (unidade)</p>
   </div>
-  <div>
+
+  <div class="acessorios-card__count">
     <i class="pi pi-minus" (click)="quantity('minus')"></i>
-    <span class="h4"><strong>{{countValue}}</strong></span>
+    <span>{{countValue}}</span>
     <i class="pi pi-plus" (click)="quantity('plus')"></i>
   </div>
 </div>

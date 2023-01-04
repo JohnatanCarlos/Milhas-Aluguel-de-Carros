@@ -1,0 +1,29 @@
+@import 'src/app/shared/layout/mixins/mixin.scss';
+@import 'src/app/shared/layout/pattern/color-palette';
+
+.p-button{
+  width: 100%;
+}
+
+.sign__in {
+  @include center;
+  width: 40%;
+  // height: 85vh;
+
+  &-form {
+    padding: 30px 100px;
+    border: 1px solid $second-color-2;
+    border-radius: 7px;
+  }
+
+  &-footer {
+    @include center-between;
+  }
+}
+
+::ng-deep {
+  .mat-form-field-wrapper{
+    padding: 0 !important;
+  }
+}
+

@@ -1,109 +1,20 @@
-<!-- Adicionais -->
-<h2>Adicionais</h2>
-<div class="row">
-  <div class="col-12 p-0" *ngFor="let additional of additionals">
-    <app-card-additional [title]="additional.title" [value]="additional.value"></app-card-additional>
-  </div>
 
-  <!-- <div class="col-12 adicionais-card">
-    <i class="pi pi-times"> Proteção do carro</i>
+<div class="rater-additional" *ngIf="isShowAdditional">
+  <h1>Deixe seu aluguel ainda mais completo</h1>
+  <h3>Fique livre de preocupações! Conheça e inclua os nossos adicionais na sua reserva</h3>
 
-    <div class="d-flex">
-      <div style="margin-right: 10px">R$ 25,00 / dia</div>
-      <input class="form-check-input" type="checkbox" />
+  <!-- Adicionais -->
+  <div class="row py-3">
+    <div class="col-12 p-0" *ngFor="let additional of additionals">
+      <app-card-additional [title]="additional.title" [value]="additional.value" [description]="additional.description"></app-card-additional>
     </div>
   </div>
 
-  <div class="col-12 adicionais-card">
-    <i class="pi pi-times"> Cobertura para terceiros</i>
-
-    <div class="d-flex">
-      <div style="margin-right: 10px">R$ 10,00 / dia</div>
-      <input class="form-check-input" type="checkbox" />
+  <!-- Acessórios -->
+  <div class="row">
+    <h3>Adicione acessórios para sua praticidade e conforto (sujeitos a disponibilidade na agência)</h3>
+    <div class="col-6" *ngFor="let accessory of accessorys">
+      <app-card-accessory [title]="accessory.title" [value]="accessory.value"></app-card-accessory>
     </div>
   </div>
-
-  <div class="col-12 adicionais-card">
-    <i class="pi pi-times"> Condutor Jovem</i>
-
-    <div class="d-flex">
-      <div style="margin-right: 10px">R$ 10,00 / dia</div>
-      <input class="form-check-input" type="checkbox" />
-    </div>
-  </div>
-
-  <div class="col-12 adicionais-card">
-    <i class="pi pi-times"> Limpeza Garantida</i>
-
-    <div class="d-flex">
-      <div style="margin-right: 10px">R$ 10,00 / dia</div>
-      <input class="form-check-input" type="checkbox" />
-    </div>
-  </div> -->
-</div>
-
-<!-- Acessórios -->
-<h2>Acessórios</h2>
-<div class="row">
-
-  <!-- <div class="col-6 acessorios-card">
-    <div>
-      <i class="pi pi-times"> Cadeira de bebê</i>
-      <p>R$ 25,00 / dia (unidade)</p>
-    </div>
-    <div>
-      <i class="pi pi-minus" (click)="countNumber('rem')"></i>
-      <span class="h4"
-        ><strong> {{ count }} </strong></span
-      >
-      <i class="pi pi-plus" (click)="countNumber('add')"></i>
-    </div>
-  </div>
-
-  <div class="col-6 acessorios-card">
-    <div>
-      <i class="pi pi-times"> Assento de elevação</i>
-      <p>R$ 25,00 / dia (unidade)</p>
-    </div>
-    <div>
-      <i class="pi pi-minus" (click)="countNumber('rem')"></i>
-      <span class="h4"
-        ><strong> {{ count }} </strong></span
-      >
-      <i class="pi pi-plus" (click)="countNumber('add')"></i>
-    </div>
-  </div>
-
-  <div class="col-6 acessorios-card">
-    <div>
-      <i class="pi pi-times"> Bebê conforto</i>
-      <p>R$ 25,00 / dia (unidade)</p>
-    </div>
-    <div>
-      <i class="pi pi-minus" (click)="countNumber('rem')"></i>
-      <span class="h4"
-        ><strong> {{ count }} </strong></span
-      >
-      <i class="pi pi-plus" (click)="countNumber('add')"></i>
-    </div>
-  </div>
-
-  <div class="col-6 acessorios-card">
-    <div>
-      <i class="pi pi-times"> Localiza Way</i>
-      <p>R$ 25,00 / dia (unidade)</p>
-    </div>
-    <div>
-      <i class="pi pi-minus" (click)="countNumber('rem')"></i>
-      <span class="h4"
-        ><strong> {{ count }} </strong></span
-      >
-      <i class="pi pi-plus" (click)="countNumber('add')"></i>
-    </div>
-  </div> -->
-
-  <div class="col-6" *ngFor="let accessory of accessorys">
-    <app-card-accessory [title]="accessory.title" [value]="accessory.value"></app-card-accessory>
-  </div>
-
 </div>

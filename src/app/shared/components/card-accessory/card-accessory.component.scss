@@ -8,4 +8,43 @@
   margin: 10px 0;
   padding: 15px 30px;
   height: auto;
+
+  &__info {
+    span {
+      font-size: 14pt;
+    }
+
+    p {
+      margin: 0; //TODO: REMOVER
+    }
+
+    &-title {
+      @include center;
+      padding-bottom: 10px;
+
+      i {
+        font-size: 25px;
+      }
+
+      span {
+        font-weight: 600;
+        font-size: 12pt;
+        padding: 0 10px;
+      }
+    }
+  }
+
+  &__count {
+    @include center;
+
+    i {
+      font-size: 8pt;
+      cursor: pointer;
+    }
+
+    span {
+      font-size: 18pt;
+      margin: 7px;
+    }
+  }
 }

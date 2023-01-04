@@ -1,3 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 @import './app/shared/layout/core.scss';
 @import './app/shared/layout/global/layout-global.scss';
+
+html, body { height: 100%; }
+body { margin: 0; font-family: 'Nunito Sans', sans-serif; font-weight: 200;}
+
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px;
+}

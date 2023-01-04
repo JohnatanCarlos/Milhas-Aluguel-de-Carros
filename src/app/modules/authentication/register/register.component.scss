@@ -1,0 +1,19 @@
+@import 'src/app/shared/layout/mixins/mixin.scss';
+@import 'src/app/shared/layout/pattern/color-palette.scss';
+
+// .form__register-user > mat-form-field{
+//   padding-right: 8px;
+// }
+
+// .form__register-confirm {
+//   @include center-between;
+// }
+
+.form__register-footer {
+  @include center;
+
+  &-button {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

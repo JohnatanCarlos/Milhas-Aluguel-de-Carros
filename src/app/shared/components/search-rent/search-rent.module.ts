@@ -1,3 +1,4 @@
+import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { SearchRentComponent } from './search-rent.component';
@@ -10,9 +11,10 @@ import { CommonModule } from '@angular/common';
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     InputTextModule,
     FormsModule,
-    ButtonModule
+    ButtonModule,
   ],
   exports: [SearchRentComponent],
   declarations: [SearchRentComponent],

@@ -1,0 +1,13 @@
+<button class="accordion-btn" (click)="showInfoAccordion()">
+  {{titleAccordion}}
+  <i [ngClass]="openDetails ? 'pi pi-angle-double-up' : 'pi pi-angle-double-down'"></i>
+</button>
+
+<div class="row" *ngIf="openDetails">
+  <div class="col-sm-12 col-md-12 col-lg-6" *ngFor="let detail of detailsVehicle">
+    <div class="accordion-card">
+      <i class="pi pi-qrcode"></i>
+      <span>{{detail?.title}}</span>
+    </div>
+  </div>
+</div>

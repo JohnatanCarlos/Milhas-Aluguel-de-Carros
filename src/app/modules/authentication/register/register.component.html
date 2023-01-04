@@ -1,29 +1,71 @@
 <div class="container py-5">
+  <p class="h5">Olá!<br>
+    Para começar, preencha seus dados básicos:</p>
   <div class="row">
-    <div class="col-4">
-      <div class="p-inputgroup">
-        <span class="p-inputgroup-addon">
-          <i class="pi pi-user"></i>
-        </span>
-        <span class="p-float-label">
-          <input type="text" id="inputgroup" pInputText />
-          <label for="inputgroup">Nome Completo</label>
-        </span>
+    <form class="form__register-user">
+
+      <mat-form-field appearance="outline" class="col-4">
+        <mat-label>Nome</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-3">
+        <mat-label>CPF</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-2">
+        <mat-label>Nascionalidade</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let country of countries" [value]="country.ordem">
+            {{country.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-radio-group aria-label="Select an option" class="col-3">
+        <mat-radio-button value="1">Feminino</mat-radio-button>
+        <mat-radio-button value="2">Masculino</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field appearance="outline" class="col-3">
+        <mat-label>Telefone</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-3">
+        <mat-label>Email</mat-label>
+        <input matInput>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-3">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hidePassword ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="col-3">
+        <mat-label>Confirma Senha</mat-label>
+        <input matInput [type]="hideConfirmePassword ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hideConfirmePassword = !hideConfirmePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideConfirmePassword">
+          <mat-icon>{{hideConfirmePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <div class="row form__register-footer">
+        <mat-card class="col-10">As informações coletadas no cadastro do cliente serão utilizadas para identificação das reservas e execução de contrato entre o titular e a Localiza. Para mais informações sobre o tratamento de dados pessoais, acesse nosso Portal de Privacidade.</mat-card>
+
+        <div class="col-2 form__register-footer-button">
+          <button mat-raised-button color="primary" style="width: 100%">
+            Continuar
+            <mat-icon *ngIf="false">
+              <mat-spinner color="accent" diameter="20"></mat-spinner>
+            </mat-icon>
+          </button>
+        </div>
       </div>
-    </div>
-
-    <div class="col-4">
-      <div class="p-inputgroup">
-        <span class="p-inputgroup-addon">
-          <i class="pi pi-user"></i>
-        </span>
-        <span class="p-float-label">
-          <input type="text" id="inputgroup" pInputText />
-          <label for="inputgroup">CPF</label>
-        </span>
-      </div>
-    </div>
-
-
+    </form>
   </div>
 </div>

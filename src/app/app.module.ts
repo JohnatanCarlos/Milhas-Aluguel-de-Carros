@@ -10,6 +10,7 @@ import { ReservationModule } from './modules/reservation/reservation.module';
 import { FooterModule } from './shared/components/footer/footer.module';
 import { HeaderModule } from './shared/components/header/header.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SignInModule } from './modules/authentication/sign-in/sign-in.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterModule,
     ReservationModule,
     RegisterModule,
+    SignInModule,
     BrowserAnimationsModule
   ],
   providers: [],
