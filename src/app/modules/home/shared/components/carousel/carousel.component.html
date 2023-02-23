@@ -1,13 +1,21 @@
-<p-carousel [value]="products" styleClass="custom-carousel" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="5000">
-  <ng-template let-product pTemplate="item">
-      <div class="product-item">
-          <div class="product-item-content">
-              <div class="d-flex justify-content-center align-items-center flex-column">
-                  <img src="{{product.image}}" alt="" width="400px">
-                  <h4 class="p-mb-1">{{product.group}} - {{product.subGroup}}</h4>
-                  <p><small>{{product.description}}</small></p>
-              </div>
-          </div>
-      </div>
-  </ng-template>
-</p-carousel>
+<div class="swiper">
+  <!-- Additional required wrapper -->
+  <div class="swiper-wrapper">
+
+    <!-- Slides -->
+    <div class="swiper-slide" *ngFor="let prd of dataSource">
+      <img src="{{prd.image}}" alt="" width="500px">
+      <div>{{prd.group}}</div>
+      <div>{{prd.description}}</div>
+    </div>
+
+  </div>
+
+  <!-- If we need pagination -->
+  <!-- <div class="swiper-pagination"></div> -->
+
+  <!-- If we need navigation buttons -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+
+</div>

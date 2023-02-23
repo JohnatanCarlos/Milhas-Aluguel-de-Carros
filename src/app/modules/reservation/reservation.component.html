@@ -43,7 +43,7 @@
           <div class="text-center">
             <p><strong>Grupo B - Compacto Com Ar</strong></p>
 
-            <p-carousel [value]="products" orientation="vertical">
+            <p-carousel [value]="products" orientation="horizontal" [showNavigators]="false">
               <ng-template let-products pTemplate="item">
                 <img src="{{ products.image }}" alt="" width="100%" />
                 <p>{{ products.name }}</p>

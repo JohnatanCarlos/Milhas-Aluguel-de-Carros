@@ -27,12 +27,12 @@
   <!-- CONHEÇA NOSSA FROTA -->
   <div class="container-fluid meet-fleet">
     <div class="container">
-      <h4>Conheça a nossa Frota</h4>
+      <h1>Conheça a nossa Frota</h1>
       <p>As melhores condições para você reservar e aproveitar</p>
 
       <!--CAROUSEL -->
-      <app-carousel></app-carousel>
-      <button pButton type="button" label="CONFIRA TODOS OS GRUPOS" class="p-button-outlined p-button-warning"></button>
+      <app-carousel [dataSource]="cars" [slidesPerView]="1"></app-carousel>
+      <button mat-stroked-button class="btn-check-all">CONFIRA TODOS OS GRUPOS</button>
     </div>
   </div>
 
@@ -67,4 +67,19 @@
       </div>
     </div>
   </div>
+
+
+  <!-- DESTINOS PARA DESCOBRIR -->
+  <div class="container-fluid meet-fleet">
+    <div class="container">
+      <h1>Destinos para descobrir e se inspirar</h1>
+      <!--CAROUSEL -->
+
+      <app-carousel [dataSource]="destinyToDiscover" [slidesPerView]="1"></app-carousel>
+      <button mat-stroked-button class="btn-check-all">CONFIRA TODOS OS DESTINOS</button>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+
 </div>

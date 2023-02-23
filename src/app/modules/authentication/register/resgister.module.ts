@@ -1,3 +1,4 @@
+import { SearchRentModule } from './../../../shared/components/search-rent/search-rent.module';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
@@ -10,7 +11,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { RegisterComponent } from './register.component';
-import { ButtonModule } from 'primeng/button';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { StepsModule } from 'primeng/steps';
 
 @NgModule({
   imports: [
@@ -22,10 +24,12 @@ import { ButtonModule } from 'primeng/button';
     MatIconModule,
     MatSelectModule,
     MatRadioModule,
+    MatCheckboxModule,
     MatButtonModule,
     MatCardModule,
     MatProgressSpinnerModule,
-    ButtonModule,
+    StepsModule,
+    SearchRentModule
   ],
   exports: [],
   declarations: [RegisterComponent],

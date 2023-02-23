@@ -6,13 +6,13 @@
 }
 
 .p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
-  background: $primary-color-0 !important;
+  background: $main-color-0 !important;
   color: #ffffff;
 }
 
-.p-carousel-item-start, .p-carousel-item-end{
-  opacity: 50% !important;
-}
+// .p-carousel-item-start, .p-carousel-item-end{
+//   opacity: 50% !important;
+// }
 
 .p-carousel-item-start .product-item .product-item-content div img{
   zoom: 80% !important;

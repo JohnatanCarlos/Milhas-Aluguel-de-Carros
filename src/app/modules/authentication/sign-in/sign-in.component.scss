@@ -1,29 +1,20 @@
 @import 'src/app/shared/layout/mixins/mixin.scss';
 @import 'src/app/shared/layout/pattern/color-palette';
 
-.p-button{
+button {
   width: 100%;
 }
 
-.sign__in {
+.signIn {
   @include center;
-  width: 40%;
-  // height: 85vh;
 
-  &-form {
-    padding: 30px 100px;
-    border: 1px solid $second-color-2;
-    border-radius: 7px;
-  }
-
-  &-footer {
+  &__footer {
     @include center-between;
-  }
-}
+    margin: 18px 0;
 
-::ng-deep {
-  .mat-form-field-wrapper{
-    padding: 0 !important;
+    a {
+      color: $main-color-1;
+    }
   }
 }
 

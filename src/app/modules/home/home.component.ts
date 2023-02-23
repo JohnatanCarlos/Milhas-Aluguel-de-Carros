@@ -23,7 +23,7 @@ export class HomeComponent implements OnInit {
       id: '1002',
       group: 'Grupo C - Compacto ',
       description: 'Product Description',
-      image: 'https://storage.performay.com.br/models/featured/GYiFPKtXcvvhKtPZZ6z5iWcU0Rz91gRA2ITVS79l.jpeg',
+      image: 'https://orca.com.br/uploads/products/versions/branco-summit-novo-onix.png',
     },
     {
       id: '1003',
@@ -44,6 +44,33 @@ export class HomeComponent implements OnInit {
       image: 'https://vivacar.com.br/wp-content/uploads/2018/01/kwid.jpg',
     },
   ];
+
+  destinyToDiscover = [
+    {
+      id: '1000',
+      group: 'O que fazer em Recife',
+      description: '',
+      image: 'https://euviajo.deonibus.com/wp-content/uploads/2021/03/cidade-perto-de-recife.jpg',
+    },
+    {
+      id: '1001',
+      group: 'O que fazer em Porto de Galinhas',
+      description: '',
+      image: 'https://a.cdn-hotels.com/gdcs/production147/d268/ff75092a-e714-42ff-8055-b6f0a96405f0.jpg',
+    },
+    {
+      id: '1002',
+      group: 'O que fazer em Pria dos Carneiros',
+      description: '',
+      image: 'https://www.viagenscinematograficas.com.br/wp-content/uploads/2018/12/Praia-dos-Carneiros-O-que-Fazer-Capa-702x459.jpg',
+    },
+    {
+      id: '1003',
+      group: 'O que fazer em Museo de Brennand',
+      description: '',
+      image: 'https://s3-sa-east-1.amazonaws.com/img.guiadasartes.com.br/eve/654-instituto-ricardo-brennand-/oPsAzbNU.jpg',
+    },
+  ]
 
   constructor() {}
 

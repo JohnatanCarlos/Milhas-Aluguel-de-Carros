@@ -1,25 +1,22 @@
 @import 'src/app/shared/layout/pattern/color-palette.scss';
 @import 'src/app/shared/layout/mixins/mixin.scss';
 
-input {
-  width: 100%;
+
+button {
+  height: 50px;
+  width: auto;
+  margin-top: 15px;
 }
 
 .search {
-  @include center-align;
+  // @include center-align;
 
-  // position: fixed;
-  background-color: $primary-color-0;
-  padding: 15px 40px;
-  border-radius:  0 0 20px 20px;
+  background-color: $main-color-0;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 40px;
 
-  &__form-line > div{
-    margin-right: 15px;
-    margin-bottom: 5px;
+  &__form {
+    margin: 15px;
   }
-}
-
-.search__button {
-  @include center;
 }
 

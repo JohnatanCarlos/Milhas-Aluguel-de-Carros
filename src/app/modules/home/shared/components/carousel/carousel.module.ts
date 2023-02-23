@@ -1,12 +1,12 @@
-import { NgModule }      from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {FormsModule} from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-import {CarouselModule} from 'primeng/carousel';
-import {ButtonModule} from 'primeng/button';
-import {ToastModule} from 'primeng/toast';
+import { CarouselModule } from 'primeng/carousel';
+import { ButtonModule } from 'primeng/button';
+import { ToastModule } from 'primeng/toast';
 
 import { CarouselComponent } from './carousel.component';
 
@@ -18,7 +18,7 @@ import { CarouselComponent } from './carousel.component';
     ButtonModule,
     ToastModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [CarouselComponent],
   declarations: [CarouselComponent],

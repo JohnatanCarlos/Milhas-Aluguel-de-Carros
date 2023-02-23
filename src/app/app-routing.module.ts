@@ -8,7 +8,7 @@ import { ReservationComponent } from './modules/reservation/reservation.componen
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
-  {path: 'register', component: RegisterComponent},
+  {path: 'cadastro', component: RegisterComponent},
   {path: 'login', component: SignInComponent},
   {path: 'reservas/passo-2', component: ReservationComponent},
   {path: 'reservas/passo-3', component: ReservationComponent}

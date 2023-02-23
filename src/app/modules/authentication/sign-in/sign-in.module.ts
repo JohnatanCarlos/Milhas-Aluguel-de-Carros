@@ -5,9 +5,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { ButtonModule } from 'primeng/button';
 
 import { SignInComponent } from './sign-in.component';
+import { SearchRentModule } from 'app/shared/components/search-rent/search-rent.module';
 
 @NgModule({
   imports: [
@@ -17,7 +17,7 @@ import { SignInComponent } from './sign-in.component';
     MatIconModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    ButtonModule
+    SearchRentModule
   ],
   exports: [SignInComponent],
   declarations: [SignInComponent],

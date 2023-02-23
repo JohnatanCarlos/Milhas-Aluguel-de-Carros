@@ -22,6 +22,46 @@ export class ReservationComponent implements OnInit {
   ngOnInit() {
     this.setTitle(this.router.url);
 
+    // TODO: MONTAR OBJETO E INTEGRAR.
+    // this.products = [
+    //   {
+    //     marca: "Fiat",
+    //     modelo: "Mobi",
+    //     grupoImage: [
+    //       "https://img0.icarros.com/dbimg/imgnoticia/4/27348_1",
+    //       "https://mobi.fiat.com.br/content/dam/fiat/products/341/acz/0/2023/page/hero.png",
+    //     ],
+    //     detalhes: [
+    //       {title: '4 portas'},
+    //       {title: 'Ar-condicionado'},
+    //       {title: 'Vidro elétrico'},
+    //       {title: 'Trava elétrica'},
+    //       {title: 'Dir. Hidráulica'},
+    //       {title: 'Air bag'},
+    //       {title: 'ABS'},
+    //       {title: '5 pessoas'},
+    //     ]
+    //   },
+    //   {
+    //     marca: "Renault",
+    //     modelo: "Kwid",
+    //     grupoImage: [
+    //       "https://img0.icarros.com/dbimg/imgnoticia/4/27348_1",
+    //       "https://mobi.fiat.com.br/content/dam/fiat/products/341/acz/0/2023/page/hero.png",
+    //     ],
+    //     detalhes: [
+    //       {title: '4 portas'},
+    //       {title: 'Ar-condicionado'},
+    //       {title: 'Vidro elétrico'},
+    //       {title: 'Trava elétrica'},
+    //       {title: 'Dir. Hidráulica'},
+    //       {title: 'Air bag'},
+    //       {title: 'ABS'},
+    //       {title: '5 pessoas'},
+    //     ]
+    //   }
+    // ];
+
     this.items = [
       {label: 'Local, Data e Hora da Reserva'},
       {label: 'Grupos de Carros'},

@@ -8,7 +8,7 @@
 // }
 
 h5 {
-  color: $primary-color-1;
+  color: $main-color-1;
 }
 
 .list-card {
@@ -25,7 +25,7 @@ h5 {
 .card__select {
   border-radius: 7px;
   padding: 10px 20px;
-  background-color: $second-color-0;
+  background-color: $neutral-color-0;
   box-shadow: 0 5px 1em rgba(128, 128, 128, 0.3);
   cursor: pointer;
 
@@ -42,8 +42,8 @@ h5 {
 }
 
 .card__select:hover {
-  color: $second-color-0;
-  background-color: $primary-color-1;
+  color: $neutral-color-0;
+  background-color: $main-color-1;
 
   // CRIAR UM MIXIN
   -webkit-transition: 0.2s ease-in;
@@ -55,7 +55,7 @@ h5 {
 .card__button-circle {
   @include center;
 
-  background-color: $primary-color-0;
+  background-color: $main-color-0;
   border-radius: 50%;
   padding: 10px;
 
@@ -72,13 +72,13 @@ h5 {
   flex-direction: column;
 
   color: #000;
-  // background-color: $primary-color-1;
+  // background-color: $main-color-1;
   // border: 1px solid gray;
   padding: 10px 30px;
 }
 
 .resumo__reserva-text_underline {
-  color: $primary-color-1;
+  color: $main-color-1;
   text-decoration: underline;
   cursor: pointer;
 }
@@ -90,8 +90,6 @@ h5 {
 
 .resumo__reserva-title {
   padding: 18px;
-  color: $second-color-0;
-  background-color: $primary-color-0;
-
-
+  color: $neutral-color-0;
+  background-color: $main-color-0;
 }

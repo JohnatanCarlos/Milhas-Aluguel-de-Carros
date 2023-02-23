@@ -1,26 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 
-/** Error when invalid control is dirty, touched, or submitted. */
-// export class MyErrorStateMatcher implements ErrorStateMatcher {
-//   isErrorState(control: FormControl | null, form: FormGroupDirective | NgForm | null): boolean {
-//     const isSubmitted = form && form.submitted;
-//     return !!(control && control.invalid && (control.dirty || control.touched || isSubmitted));
-//   }
-// }
-
 @Component({
   selector: 'app-register',
   templateUrl: 'register.component.html',
   styleUrls: ['register.component.scss'],
 })
 export class RegisterComponent implements OnInit {
-  hidePassword = true;
-  hideConfirmePassword = true;
+  items: any[];
+  currentStep: number;
   countries: any[];
 
   // matcher = new MyErrorStateMatcher();
 
   constructor() {
+    this.currentStep = 0;
+    this.items = [
+      {label: 'Dados Pessoais'},
+      {label: 'Confirmação do Cadastro'},
+      {label: 'Conclusão do Cadastro'}
+    ];
+
     this.countries = [
       {
         ordem: 1,

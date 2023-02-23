@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class SearchRentComponent implements OnInit {
-  showWithdrawal = true;
+  showLabelDevolution = true;
 
   constructor() { }
 
   ngOnInit() { }
+
+  showHideLabelDevolution(showLabelDevolution: boolean){
+    this.showLabelDevolution = !showLabelDevolution;
+  }
 }

@@ -1,13 +1,11 @@
 @import 'src/app/shared/layout/pattern/color-palette.scss';
 @import 'src/app/shared/layout/mixins/mixin.scss';
 
-.container {
-  @include center-between;
-}
-
 .header {
-  background-color: $second-color-1;
-  padding: 15px 0;
+  @include center-between;
+  background-color: $main-color-1;
+  padding: 15px 30px;
+
 
   &__logo {
     width: 240px;
@@ -17,16 +15,16 @@
 
   &__acesso {
     font-size: 13px;
-    color: $primary-color-1;
+    padding: 5px 0;
+    color: $neutral-color-1;
     cursor: pointer;
   }
 
   &__icon {
+    color: $main-color-3;
     font-size: 16px;
     padding-right: 10px;
   }
-
-
 }
 
 @media (max-width: 600px)

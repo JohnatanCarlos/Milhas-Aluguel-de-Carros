@@ -7,7 +7,7 @@ import { Component, Input } from '@angular/core';
 })
 export class AccordionCardComponent {
   @Input() detailsVehicle: any[];
-  openDetails = true;
+  openDetails = false;
 
   constructor() { }
 

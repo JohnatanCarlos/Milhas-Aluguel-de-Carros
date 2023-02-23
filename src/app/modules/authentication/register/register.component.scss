@@ -1,19 +1,25 @@
 @import 'src/app/shared/layout/mixins/mixin.scss';
-@import 'src/app/shared/layout/pattern/color-palette.scss';
 
-// .form__register-user > mat-form-field{
-//   padding-right: 8px;
-// }
+button {
+  min-width: auto;
+  height: 45px;
+}
 
-// .form__register-confirm {
-//   @include center-between;
-// }
+.information-card {
+  @include center-between;
 
-.form__register-footer {
-  @include center;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 10px;
+  height: auto;
+  padding: 5px 15px;
+  margin: 18.5px 0;
 
-  &-button {
-    display: flex;
-    justify-content: flex-end;
+  i {
+    font-size: 25px;
+  }
+
+  span {
+    font-size: 11pt;
+    padding: 0 10px;
   }
 }
