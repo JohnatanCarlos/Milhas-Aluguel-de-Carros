@@ -1,12 +1,6 @@
 @import 'src/app/shared/layout/mixins/mixin.scss';
 @import 'src/app/shared/layout/pattern/color-palette.scss';
 
-// p {
-//   // !VERFICAR O RESET
-//   margin: 0 !important;
-//   padding: 0 !important;
-// }
-
 h5 {
   color: $main-color-1;
 }
@@ -15,6 +9,7 @@ h5 {
   border: 1px solid rgba(128, 128, 128, 0.3);
   border-radius: 10px;
   padding: 25px 30px;
+  margin-bottom: 18px;
   height: auto;
 }
 
@@ -67,29 +62,44 @@ h5 {
 }
 
 .resumo__reserva {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
 
-  color: #000;
-  // background-color: $main-color-1;
-  // border: 1px solid gray;
-  padding: 10px 30px;
-}
+  &-field {
+    width: 380px;
+    box-shadow: -3px 0 10px rgba(128, 128, 128, 0.312);
 
-.resumo__reserva-text_underline {
-  color: $main-color-1;
-  text-decoration: underline;
-  cursor: pointer;
-}
+    &-fixed {
+      @extend .resumo__reserva-field;
+      position: fixed;
+      z-index: 1;
+      top: 10px;
+    }
+  }
 
-.resumo__reserva-field {
-  width: 70%;
-  box-shadow: -3px 0 10px rgba(128, 128, 128, 0.312);
-}
+  &-section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 
-.resumo__reserva-title {
-  padding: 18px;
-  color: $neutral-color-0;
-  background-color: $main-color-0;
+    color: $neutral-color-3;
+    padding: 10px 30px;
+  }
+
+  &-text_underline {
+    color: $main-color-1;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &-header {
+    padding: 18px;
+    border-radius: 10px 10px 0 0;
+    color: $neutral-color-0;
+    background-color: $main-color-0;
+  }
+
+  &-footer {
+    @extend .resumo__reserva-header;
+    border-radius: 0 0 10px 10px !important;
+
+  }
 }

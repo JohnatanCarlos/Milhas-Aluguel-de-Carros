@@ -6,42 +6,11 @@
   </div>
 
   <div class="row pb-5">
-    <!-- <div class="col-7 card">
-      <div class="row">
-        <div class="col-6 card__vehicle">
-          <div class="text-center">
-            <p>Grupo B - Compacto Com Ar</strong></p>
-            <img src="https://img0.icarros.com/dbimg/imgnoticia/4/27348_1" alt="" style="width: 300px; height: 180;">
-            <p>Veículo similar a: Renault Kwid 1.0, Fiat Mobi 1.0, Fiat Uno 1.0, dentre outros.</p>
-            <p><small>Sua reserva garante um dos carros desse grupo.<br> Modelo sujeito à disponibilidade da agência.</small></p>
-            <a href="#">Mais detalhes</a>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card__select">
-            <div class="d-flex justify-content-between">
-              <p>Oferta Promo</p>
-              <div class="card__button-circle">
-                <i class="pi pi-angle-double-right" style="font-size: 19px;"></i>
-              </div>
-            </div>
-            <div class="d-flex">
-              <div class="col-4"><strong>R$ 80,00</strong></div>
-              <div class="col-8">
-                <p>Km Livre</p>
-                <p>Cancelamento Grátis até 24 horas da retirada</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><br> -->
-
     <div class="col-7">
-      <div class="row list-card">
+      <div class="row list-card" *ngFor="let item of ofertas">
         <div class="col-6 card__vehicle">
           <div class="text-center">
-            <p><strong>Grupo B - Compacto Com Ar</strong></p>
+            <p><strong>Grupo {{item.grupoVeiculo.grupo}} - {{item.grupoVeiculo.nome}}</strong></p>
 
             <p-carousel [value]="products" orientation="horizontal" [showNavigators]="false">
               <ng-template let-products pTemplate="item">
@@ -65,8 +34,8 @@
             </div>
 
             <!-- DETALHES DO VEICULO -->
-            <app-accordion-card [detailsVehicle]="detailsVehicle"></app-accordion-card>
-            <p><small>*A taxa de aluguel (12%) ainda não está inclusa nesse valor.</small></p>
+            <app-accordion-card [detailsVehicle]="item.acessorios"></app-accordion-card>
+            <p><small>*A taxa de aluguel ({{item.tarifa.percentualTaxaServico}}%) ainda não está inclusa nesse valor.</small></p>
           </div>
         </div>
         <div class="col-6" routerLink="/reservas/passo-3">
@@ -78,10 +47,10 @@
               </div>
             </div>
             <div class="d-flex">
-              <div class="col-4 mr-3 card__select-value"><strong>R$ 89,90</strong></div>
+              <div class="col-4 mr-3 card__select-value"><strong>R$ {{item.tarifa.valorDiaria}}</strong></div>
               <div class="col-8 card__select-description">
-                <div><i class="pi pi-check"></i><small> Km Livre</small></div>
-                <div><i class="pi pi-check"></i> <small> Cancelamento Grátis até 24 horas da retirada</small></div>
+                <div *ngFor="let atributo of item.atributos"><i class="pi pi-check"></i><small> {{atributo}}</small></div>
+                <!-- <div><i class="pi pi-check"></i> <small> Cancelamento Grátis até 24 horas da retirada</small></div> -->
               </div>
             </div>
           </div>
@@ -97,12 +66,12 @@
 
     <!-- RESUMO DA RESERVA -->
     <div class="col-5">
-      <div class="resumo__reserva-field">
-        <div class="resumo__reserva-title text-center">
+      <div [ngClass]="isScrollToFixed ? 'resumo__reserva-field-fixed' : 'resumo__reserva-field'">
+        <div class="resumo__reserva-header text-center">
           <p class="h5 fw-bold">Resumo da Reserva</p>
         </div>
 
-        <div class="resumo__reserva">
+        <div class="resumo__reserva-section">
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <p class="h6">Retirada</p>
@@ -114,7 +83,7 @@
         </div>
         <p-divider></p-divider>
 
-        <div class="resumo__reserva">
+        <div class="resumo__reserva-section">
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <p class="h6">Develução</p>
@@ -126,7 +95,7 @@
         </div>
         <p-divider></p-divider>
 
-        <div class="resumo__reserva">
+        <div class="resumo__reserva-section">
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <p class="h6">Grupo</p>
@@ -138,7 +107,7 @@
         </div>
         <p-divider></p-divider>
 
-        <div class="resumo__reserva">
+        <div class="resumo__reserva-section">
           <div class="d-flex justify-content-between align-items-center">
             <div>
               <strong>Diárias</strong><br />
@@ -151,7 +120,7 @@
           </div>
         </div>
 
-        <div class="resumo__reserva">
+        <div class="resumo__reserva-section">
           <div class="d-flex justify-content-between align-items-center mb-2">
             <div>
               <strong>Proteções</strong> <br />
@@ -184,7 +153,7 @@
           </div>
         </div>
 
-        <div class="resumo__reserva-title text-end">
+        <div class="resumo__reserva-footer text-end">
           <p class="fw-bold">Valor total previsto</p>
           <p class="h1 fw-bold">R$ 2.907,52</p>
           <p class="fw-bold">Em até 6x de R$ 484,59</p>

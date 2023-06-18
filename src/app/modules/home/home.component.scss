@@ -8,8 +8,9 @@
 }
 
 .home__search-rent {
-  position: absolute;
+  position: relative;
   z-index: 1;
+  // top: -266px;
   left: 0;
   right: 0;
 }
@@ -90,15 +91,15 @@ p {
   margin-bottom: 5px;
 }
 
-@media (max-width: 872px) {
-  .home__movie {
-    display: none;
-  }
+// @media (max-width: 872px) {
+//   .home__movie {
+//     display: none;
+//   }
 
-  .home__banner {
-    display: flex;
-  }
-}
+//   .home__banner {
+//     display: flex;
+//   }
+// }
 
 
 

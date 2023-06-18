@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,54 +13,249 @@ export class ReservationComponent implements OnInit {
   items: any[];
   currentStep: number
   products: any[];
+  ofertas: any[];
   detailsVehicle: any[];
   title: string;
+  isScrollToFixed = false;
 
+  constructor(private router: Router, private renderer: Renderer2, private el: ElementRef) { }
 
-  constructor(private router: Router) { }
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    console.log(window.scrollY);
+
+    this.isScrollToFixed = window.scrollY >= 275 ? true : false;
+
+  }
 
   ngOnInit() {
     this.setTitle(this.router.url);
 
-    // TODO: MONTAR OBJETO E INTEGRAR.
-    // this.products = [
-    //   {
-    //     marca: "Fiat",
-    //     modelo: "Mobi",
-    //     grupoImage: [
-    //       "https://img0.icarros.com/dbimg/imgnoticia/4/27348_1",
-    //       "https://mobi.fiat.com.br/content/dam/fiat/products/341/acz/0/2023/page/hero.png",
-    //     ],
-    //     detalhes: [
-    //       {title: '4 portas'},
-    //       {title: 'Ar-condicionado'},
-    //       {title: 'Vidro elétrico'},
-    //       {title: 'Trava elétrica'},
-    //       {title: 'Dir. Hidráulica'},
-    //       {title: 'Air bag'},
-    //       {title: 'ABS'},
-    //       {title: '5 pessoas'},
-    //     ]
-    //   },
-    //   {
-    //     marca: "Renault",
-    //     modelo: "Kwid",
-    //     grupoImage: [
-    //       "https://img0.icarros.com/dbimg/imgnoticia/4/27348_1",
-    //       "https://mobi.fiat.com.br/content/dam/fiat/products/341/acz/0/2023/page/hero.png",
-    //     ],
-    //     detalhes: [
-    //       {title: '4 portas'},
-    //       {title: 'Ar-condicionado'},
-    //       {title: 'Vidro elétrico'},
-    //       {title: 'Trava elétrica'},
-    //       {title: 'Dir. Hidráulica'},
-    //       {title: 'Air bag'},
-    //       {title: 'ABS'},
-    //       {title: '5 pessoas'},
-    //     ]
-    //   }
-    // ];
+    this.ofertas = [
+      {
+        id: "123",
+        atributos: [
+          "Km Livre",
+          "Cancelamento Grátis até 24 horas da retirada",
+        ],
+        disponivel: true,
+        quantidadeDiarias: 30,
+        acessorios: [
+          {
+              descricao: "4 portas",
+              codigoAcessorio: 2
+          },
+          {
+              descricao: "Ar-condicionado",
+              codigoAcessorio: 3
+          },
+          {
+              descricao: "Vidro elétrico",
+              codigoAcessorio: 4
+          },
+          {
+              descricao: "Trava elétrica",
+              codigoAcessorio: 5
+          },
+          {
+              descricao: "Air bag",
+              codigoAcessorio: 6
+          },
+          {
+              descricao: "Dir. Hidráulica",
+              codigoAcessorio: 9
+          },
+          {
+              descricao: "ABS",
+              codigoAcessorio: 28
+          }
+        ],
+        grupoVeiculo: {
+          categoria: "Passeio",
+          grupo: "B",
+          nome: "Compacto Com Ar",
+          imagemPadrao: "https://www.localiza.com/brasil-site/geral/Frota/MOBI.png",
+          veiculos: [
+            {
+              blindado: false,
+              nome: "Fiat Mobi 1.0",
+              padraoGrupo: true,
+              urlImagem: "https://www.localiza.com/brasil-site/geral/Frota/MOBI.png"
+            },
+            {
+              blindado: false,
+              nome: "Fiat Uno 1.0",
+              padraoGrupo: false,
+              urlImagem: "https://www.localiza.com/brasil-site/geral/Frota/NUNB.png"
+            },
+            {
+              blindado: false,
+              nome: "Renault Kwid 1.0",
+              padraoGrupo: false,
+              urlImagem: "https://www.localiza.com/brasil-site/geral/Frota/KWID.png"
+            }
+          ]
+        },
+        tarifa: {
+          existeDescontoPromocional: false,
+          percentualTaxaServico: 12,
+          valorDiaria: "89,70",
+          valorHoraExtra: 12,
+          valorProtecaoCarro: 207,
+
+        },
+        valorTotal: 2274.52
+      },
+      {
+        id: "1234",
+        atributos: [
+          "Km Controlado",
+          "Hora Extra",
+          "Cancelamento Grátis até 24 horas da retirada",
+        ],
+        disponivel: true,
+        quantidadeDiarias: 30,
+        acessorios: [
+          {
+              descricao: "4 portas",
+              codigoAcessorio: 2
+          },
+          {
+              descricao: "Ar-condicionado",
+              codigoAcessorio: 3
+          },
+          {
+              descricao: "Vidro elétrico",
+              codigoAcessorio: 4
+          },
+          {
+              descricao: "Trava elétrica",
+              codigoAcessorio: 5
+          },
+          {
+              descricao: "Air bag",
+              codigoAcessorio: 6
+          },
+          {
+              descricao: "Dir. Hidráulica",
+              codigoAcessorio: 9
+          },
+          {
+              descricao: "ABS",
+              codigoAcessorio: 28
+          }
+        ],
+        grupoVeiculo: {
+          categoria: "Passeio",
+          grupo: "B",
+          nome: "Compacto Com Ar",
+          imagemPadrao: "https://www.localiza.com/brasil-site/geral/Frota/MOBI.png",
+          veiculos: [
+            {
+              blindado: false,
+              nome: "Fiat Mobi 1.0",
+              padraoGrupo: true,
+              urlImagem: "https://www.localiza.com/brasil-site/geral/Frota/MOBI.png"
+            },
+            {
+              blindado: false,
+              nome: "Fiat Uno 1.0",
+              padraoGrupo: false,
+              urlImagem: "https://www.localiza.com/brasil-site/geral/Frota/NUNB.png"
+            },
+            {
+              blindado: false,
+              nome: "Renault Kwid 1.0",
+              padraoGrupo: false,
+              urlImagem: "https://www.localiza.com/brasil-site/geral/Frota/KWID.png"
+            }
+          ]
+        },
+        tarifa: {
+          existeDescontoPromocional: false,
+          percentualTaxaServico: 12,
+          valorDiaria: "89,70",
+          valorHoraExtra: 12,
+          valorProtecaoCarro: 207,
+
+        },
+        valorTotal: 2274.52
+      },
+      {
+        id: "12345",
+        atributos: [
+          "Km Livre",
+          "Cancelamento Grátis até 24 horas da retirada",
+        ],
+        disponivel: true,
+        quantidadeDiarias: 30,
+        acessorios: [
+          {
+              descricao: "4 portas",
+              codigoAcessorio: 2
+          },
+          {
+              descricao: "Ar-condicionado",
+              codigoAcessorio: 3
+          },
+          {
+              descricao: "Vidro elétrico",
+              codigoAcessorio: 4
+          },
+          {
+              descricao: "Trava elétrica",
+              codigoAcessorio: 5
+          },
+          {
+              descricao: "Air bag",
+              codigoAcessorio: 6
+          },
+          {
+              descricao: "Dir. Hidráulica",
+              codigoAcessorio: 9
+          },
+          {
+              descricao: "ABS",
+              codigoAcessorio: 28
+          }
+        ],
+        grupoVeiculo: {
+          categoria: "Passeio",
+          grupo: "B",
+          nome: "Compacto Com Ar",
+          imagemPadrao: "https://www.localiza.com/brasil-site/geral/Frota/MOBI.png",
+          veiculos: [
+            {
+              blindado: false,
+              nome: "Fiat Mobi 1.0",
+              padraoGrupo: true,
+              urlImagem: "https://www.localiza.com/brasil-site/geral/Frota/MOBI.png"
+            },
+            {
+              blindado: false,
+              nome: "Fiat Uno 1.0",
+              padraoGrupo: false,
+              urlImagem: "https://www.localiza.com/brasil-site/geral/Frota/NUNB.png"
+            },
+            {
+              blindado: false,
+              nome: "Renault Kwid 1.0",
+              padraoGrupo: false,
+              urlImagem: "https://www.localiza.com/brasil-site/geral/Frota/KWID.png"
+            }
+          ]
+        },
+        tarifa: {
+          existeDescontoPromocional: false,
+          percentualTaxaServico: 12,
+          valorDiaria: "89,70",
+          valorHoraExtra: 12,
+          valorProtecaoCarro: 207,
+
+        },
+        valorTotal: 2274.52
+      }
+    ]
 
     this.items = [
       {label: 'Local, Data e Hora da Reserva'},
@@ -68,17 +263,6 @@ export class ReservationComponent implements OnInit {
       {label: 'Tarifas e Adicionais'},
       {label: 'Dados Cadastrais e Pessoais '},
     ];
-
-    this.detailsVehicle = [
-      {title: '4 portas'},
-      {title: 'Ar-condicionado'},
-      {title: 'Vidro elétrico'},
-      {title: 'Trava elétrica'},
-      {title: 'Dir. Hidráulica'},
-      {title: 'Air bag'},
-      {title: 'ABS'},
-      {title: '5 pessoas'},
-    ]
 
     this.products = [
       {

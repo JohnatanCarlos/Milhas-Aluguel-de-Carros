@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ActivatedRoute, ActivationStart, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-search-rent',
@@ -8,10 +10,22 @@ import { Component, OnInit } from '@angular/core';
 
 export class SearchRentComponent implements OnInit {
   showLabelDevolution = true;
+  disabledSearch = false;
+  isOverlapSearch = false;
 
-  constructor() { }
+  constructor(private router: Router) {
+    router.events.subscribe((event: any) => {
+      if(event instanceof ActivationStart){
+        this.disabledSearch = event.snapshot.data.disabledSearch;
+        this.isOverlapSearch = event.snapshot.data.overlapSearch;
+        console.log(this.isOverlapSearch)
+      }
+    });
+  }
+  ngOnInit(): void {
 
-  ngOnInit() { }
+  }
+
 
   showHideLabelDevolution(showLabelDevolution: boolean){
     this.showLabelDevolution = !showLabelDevolution;

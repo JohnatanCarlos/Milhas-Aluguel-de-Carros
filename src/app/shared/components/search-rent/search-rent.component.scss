@@ -5,18 +5,44 @@
 button {
   height: 50px;
   width: auto;
-  margin-top: 15px;
+  margin: 0 12px;
 }
 
 .search {
-  // @include center-align;
-
+  position: relative;
+  z-index: 2;
   background-color: $main-color-0;
   border-radius: 0 0 20px 20px;
   margin-bottom: 40px;
 
-  &__form {
+  form {
     margin: 15px;
   }
 }
+
+.search-overlap {
+  position: absolute;
+  left: 16%;
+  right: 16%;
+  z-index: 2;
+  background-color: $main-color-0;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 40px;
+
+  form {
+    margin: 15px;
+  }
+}
+
+.form-check {
+  margin: 0 0 12px 12px;
+}
+
+@media (max-width: 992px) {
+  button {
+    order: 1;
+  }
+}
+
+
 

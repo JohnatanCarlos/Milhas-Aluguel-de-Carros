@@ -2,36 +2,90 @@
 @import 'src/app/shared/layout/mixins/mixin.scss';
 
 .header {
-  @include center-between;
+  @include center;
   background-color: $main-color-1;
   padding: 15px 30px;
 
-
-  &__logo {
-    width: 240px;
-    height: 62px;
+  img {
+    width: 100%;
     cursor: pointer;
   }
 
-  &__acesso {
-    font-size: 13px;
-    padding: 5px 0;
-    color: $neutral-color-1;
-    cursor: pointer;
+  > nav {
+    @include center;
   }
 
-  &__icon {
-    color: $main-color-3;
-    font-size: 16px;
-    padding-right: 10px;
+  > nav > * {
+    color: $neutral-color-0;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+
+  &__right {
+    > div {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      padding: 5px 0;
+      color: $neutral-color-1;
+      cursor: pointer;
+    }
+
+    > div:nth-child(3)  {
+      display: none;
+    }
+
+    div > i {
+      color: $main-color-3;
+      font-size: 16px;
+      padding-right: 10px;
+    }
   }
 }
 
-@media (max-width: 600px)
-{
-  .header__logo {
-    width: 140px;
-    height: 35px;
+@media (max-width: 992px) {
+  .header {
+    img {
+      width: 70%;
+    }
+
+    > nav {
+      display: none;
+    }
+
+    &__right {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      > div:first-child {
+        display: none;
+      }
+
+      > div:nth-child(3) {
+        display: block;
+      }
+
+      > div > i {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 1200px) {
+  .header nav > * {
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    padding: 15px 10px;
+
+    // img {
+    //   width: 120px;
+    // }
   }
 }
 

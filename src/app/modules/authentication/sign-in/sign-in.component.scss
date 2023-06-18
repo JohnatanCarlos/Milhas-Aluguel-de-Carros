@@ -1,12 +1,11 @@
 @import 'src/app/shared/layout/mixins/mixin.scss';
 @import 'src/app/shared/layout/pattern/color-palette';
 
-button {
-  width: 100%;
-}
-
 .signIn {
+  border: solid 1px red;
+  background-color: $neutral-color-0;
   @include center;
+  // margin: 8rem;
 
   &__footer {
     @include center-between;
@@ -16,5 +15,14 @@ button {
       color: $main-color-1;
     }
   }
+
+  button {
+    width: 100%;
+  }
 }
 
+@media (max-width: 768px) {
+  .signIn {
+    margin: 8rem 1rem;
+  }
+}

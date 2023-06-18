@@ -1,11 +1,11 @@
 <div class="container-fluid home">
   <!-- FORMULARIO DE BUSCA -->
-  <div class="container home__search-rent">
+  <!-- <div class="container home__search-rent">
     <app-search-rent></app-search-rent>
-  </div>
+  </div> -->
 
   <!-- BANNER VIDEO DESKTOP-->
-  <div class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel slide home__search-rent" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active home__movie">
         <video autoplay muted loop>
@@ -15,26 +15,16 @@
     </div>
   </div>
 
-  <!-- BANNER MOBILE -->
-  <div class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active home__banner">
-        <img src="./../../../assets/imgs/tv_milhas.png" alt="">
-      </div>
-    </div>
-  </div>
-
   <!-- CONHEÇA NOSSA FROTA -->
-  <div class="container-fluid meet-fleet">
+  <!-- <div class="container-fluid meet-fleet">
     <div class="container">
       <h1>Conheça a nossa Frota</h1>
       <p>As melhores condições para você reservar e aproveitar</p>
 
-      <!--CAROUSEL -->
       <app-carousel [dataSource]="cars" [slidesPerView]="1"></app-carousel>
       <button mat-stroked-button class="btn-check-all">CONFIRA TODOS OS GRUPOS</button>
     </div>
-  </div>
+  </div> -->
 
   <!-- SAIBA MAIS -->
   <div class="container-fluid know-more">
@@ -70,15 +60,14 @@
 
 
   <!-- DESTINOS PARA DESCOBRIR -->
-  <div class="container-fluid meet-fleet">
+  <!-- <div class="container-fluid meet-fleet">
     <div class="container">
       <h1>Destinos para descobrir e se inspirar</h1>
-      <!--CAROUSEL -->
 
       <app-carousel [dataSource]="destinyToDiscover" [slidesPerView]="1"></app-carousel>
       <button mat-stroked-button class="btn-check-all">CONFIRA TODOS OS DESTINOS</button>
     </div>
-  </div>
+  </div> -->
 
   <app-footer></app-footer>
 

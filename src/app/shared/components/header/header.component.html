@@ -1,15 +1,29 @@
-<div class="header">
-  <img class="header__logo" src="assets/imgs/logo_milhas_aluguel_de_carros_branco.png" alt="" routerLink="">
+<div class="row header">
+  <div class="col-7 col-md-9 col-lg-2">
+    <img src="assets/imgs/logo_milhas_aluguel_de_carros_branco.png" alt="logo-minhas-aluguel-de-carros" routerLink="">
+  </div>
 
-  <div class="header__right">
-      <div class="header__acesso">
-        <i class="pi pi-car header__icon"></i>
-        MINHAS RESERVAS
-      </div>
+  <nav class="col-8">
+    <a href="#">GRUPO DE CARROS</a>
+    <a href="#">OFERTAS</a>
+    <a href="#">FIDELIDADE</a>
+    <a href="#">PARA EMPRESAS</a>
+    <a href="#">DÚVIDAS</a>
+  </nav>
 
-      <div class="header__acesso" routerLink="/login" routerLinkActive="router-link-active" >
-        <i class="pi pi-user header__icon"></i>
-        LOGIN
-      </div>
+  <div class="col-5 col-md-3 col-lg-2 header__right">
+    <div>
+      <i class="pi pi-car"></i>
+      MINHAS RESERVAS
+    </div>
+
+    <div routerLink="/login" routerLinkActive="router-link-active" >
+      <i class="pi pi-user"></i>
+      LOGIN
+    </div>
+
+    <div>
+      <i class="pi pi-bars"></i>
+    </div>
   </div>
 </div>
