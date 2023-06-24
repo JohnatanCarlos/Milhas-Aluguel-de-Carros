@@ -8,6 +8,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 import { SignInComponent } from './sign-in.component';
 import { SearchRentModule } from 'app/shared/components/search-rent/search-rent.module';
+import {MatGridListModule} from '@angular/material/grid-list';
 
 @NgModule({
   imports: [
@@ -17,7 +18,8 @@ import { SearchRentModule } from 'app/shared/components/search-rent/search-rent.
     MatIconModule,
     MatButtonModule,
     MatProgressSpinnerModule,
-    SearchRentModule
+    SearchRentModule,
+    MatGridListModule
   ],
   exports: [SignInComponent],
   declarations: [SignInComponent],

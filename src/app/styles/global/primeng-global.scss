@@ -1,0 +1,23 @@
+@import 'src/app/styles/main.scss';
+
+.p-menuitem-link{
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.p-carousel .p-carousel-indicators .p-carousel-indicator.p-highlight button {
+  background: $color-background-light !important;
+  color: #ffffff;
+}
+
+// .p-carousel-item-start, .p-carousel-item-end {
+//   opacity: 50% !important;
+// }
+
+.p-carousel-item-start .product-item .product-item-content div img {
+  zoom: 80% !important;
+}
+
+.p-carousel-item-end .product-item .product-item-content div img {
+  zoom: 80% !important;
+}

@@ -1,0 +1,109 @@
+$main-color-0: #004521;
+$main-color-1: #025E29;
+$main-color-2: #78DE1E;
+$main-color-3: #F0A501;
+
+$neutral-color-0: #FFFFFF;
+$neutral-color-1: #F2F2F2;
+$neutral-color-2: #E6E6E6;
+$neutral-color-3: #000000;
+$neutral-color-4: #1B1A17;
+
+$complementary-color-0: #A986FE;
+
+
+
+
+
+$color-base-surface: #F0F0F0;
+$color-base-on-surface: #292929;
+$color-base-primary: #8B2CE1;
+$color-base-secondary: #EDEDED;
+$color-base-interactive: #0C41ED;
+$color-base-error: #F55D45;
+$color-base-warning: #E9E233;
+$color-base-success: #00E8A6;
+$color-base-informational: #34D1E3;
+
+// Use para cor de fundo
+$color-background-light: #FFFFFF;
+$color-background-dark: #2D0B4C;
+
+// Use como cor de superfície, por cima do background, como fundo de cards
+$color-surface-default: #FAFAFA;
+$color-surface-subdued: #F5F5F5;
+$color-surface-hover: #F0F0F0;
+$color-surface-disabled: #E0E0E0;
+$color-surface-dark: #272727;
+$color-surface-error: #FFE5E0;
+$color-surface-warning: #FCFADF;
+$color-surface-success: #DAFBF2;
+$color-surface-informational: #D6FAFF;
+
+//Use como cor de texto para títulos, subtítulos e corpo
+$color-text-bg-light-default: #292929;
+$color-text-bg-light-subdued: #666666;
+$color-text-bg-light-disabled: #A3A3A3;
+$color-text-bg-light-action: #7A22D3;
+$color-text-bg-light-error: #8F2100;
+$color-text-bg-light-warning: #545208;
+$color-text-bg-light-success: #005238;
+$color-text-bg-light-informational: #0C556A;
+
+$color-text-bg-dark-default: #CCCCCC;
+$color-text-bg-dark-subdued: #F5F5F5;
+$color-text-bg-dark-disabled: #A3A3A3;
+$color-text-bg-dark-action: #FFFFFF;
+$color-text-bg-dark-error: #FFE3E0;
+$color-text-bg-dark-warning: #FCFADF;
+$color-text-bg-dark-success: #BFF8E8;
+$color-text-bg-dark-informational: #BDF7FF;
+
+// Use como cor de icons que não são interativos e que representam os status de error, warning  e success
+$color-icons-default: #666666;
+$color-icons-hover: #292929;
+$color-icons-pressed: #666666;
+$color-icons-disabled: #A3A3A3;
+$color-icons-error: #8F2100;
+$color-icons-warning: #545208;
+$color-icons-success: #005238;
+$color-icons-informational: #0C556A;
+
+// Use como cor de borda para cards, inputs..
+$color-border-one: #E0E0E0;
+$color-border-two: #A3A3A3;
+$color-border-three: #666666;
+$color-border-error: #CC2F00;
+$color-border-warning: #BAB612;
+$color-border-success: #00CC8C;
+$color-border-informational: #1593B7;
+
+// Use como ações primárias como em botões, ícones, texto de navegação
+$color-action-bg-light-default: #681DB4;
+$color-action-bg-light-hover: #47147B;
+$color-action-bg-light-pressed: #260B42;
+$color-action-bg-light-disabled: #CCCCCC;
+
+$color-action-bg-dark-default: #D4B3FF;
+$color-action-bg-dark-hover: #C89EFF;
+$color-action-bg-dark-pressed: #BA86FF;
+$color-action-bg-dark-disabled: #CCCCCC;
+
+// Use como ações secundárias como em botões, ícones, texto de navegação
+$color-action-error-default: #8F2100;
+$color-action-error-hover: #6B1900;
+$color-action-error-disabled: #FFE5E0;
+
+// Use como ações primárias como em botões, ícones, texto de navegação
+$color-focused-default: #7A22D3;
+
+// Use como uma opção quando quiser dar destaque
+$color-decorative-text-one: #49157F;
+$color-decorative-surface-one: #25D6E9;
+$color-decorative-surface-two: #230C87;
+$color-decorative-surface-three: #0C41ED;
+$color-decorative-surface-four: #00E8A6;
+$color-decorative-surface-five: #8B2CE1;
+$color-decorative-surface-six: #FF5757;
+$color-decorative-surface-seven: #E9E233;
+$color-decorative-surface-eight: #49157F;

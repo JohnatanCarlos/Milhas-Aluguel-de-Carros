@@ -10,9 +10,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import {MatButtonModule} from '@angular/material/button';
 import { HeaderModule } from '../header/header.module';
+import { MatSelectModule } from '@angular/material/select';
 
 
 @NgModule({
@@ -27,11 +28,14 @@ import { HeaderModule } from '../header/header.module';
     MatDatepickerModule,
     MatNativeDateModule,
     MatFormFieldModule,
+    MatSelectModule,
     MatInputModule,
     MatIconModule,
   ],
   exports: [SearchRentComponent],
   declarations: [SearchRentComponent],
-  providers: [],
+  providers: [
+    {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
+  ],
 })
 export class SearchRentModule { }
