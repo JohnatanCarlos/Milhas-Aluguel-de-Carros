@@ -1,7 +1,7 @@
 @import 'src/app/styles/main.scss';
 
 h5 {
-  color: $main-color-1;
+  color: $color-base-primary;
 }
 
 .list-card {
@@ -37,7 +37,7 @@ h5 {
 
 .card__select:hover {
   color: $neutral-color-0;
-  background-color: $main-color-1;
+  background-color: $color-base-primary;
 
   // CRIAR UM MIXIN
   -webkit-transition: 0.2s ease-in;
@@ -49,7 +49,7 @@ h5 {
 .card__button-circle {
   @include center;
 
-  background-color: $main-color-0;
+  background-color: $color-base-emphasis;
   border-radius: 50%;
   padding: 10px;
 
@@ -84,7 +84,7 @@ h5 {
   }
 
   &-text_underline {
-    color: $main-color-1;
+    color: $color-base-primary;
     text-decoration: underline;
     cursor: pointer;
   }
@@ -93,7 +93,7 @@ h5 {
     padding: 18px;
     border-radius: 10px 10px 0 0;
     color: $neutral-color-0;
-    background-color: $main-color-0;
+    background-color: $color-base-primary;
   }
 
   &-footer {

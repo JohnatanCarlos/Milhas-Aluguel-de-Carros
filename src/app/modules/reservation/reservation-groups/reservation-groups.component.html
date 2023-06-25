@@ -1,0 +1,44 @@
+<div class="container">
+  <p-steps [model]="items" [activeIndex]="currentStep"></p-steps>
+
+  <div class="row">
+    <h3>{{title}}</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-4" *ngFor="let item of ofertas">
+      <div class="list-card">
+        <div class="text-center">
+          <p><strong>Grupo {{item.grupoVeiculo.grupo}} - {{item.grupoVeiculo.nome}}</strong></p>
+
+          <p-carousel [value]="products" orientation="horizontal" [showNavigators]="false">
+            <ng-template let-products pTemplate="item">
+              <img src="{{ products.image }}" alt="" width="100%" />
+              <p>Fiat Mobi 1.0, Renault Kwid 1.0 ou similar*</p>
+            </ng-template>
+          </p-carousel>
+
+          <div class="mb-3">
+            <p class="h6 mb-2 text-decoration-underline ">Sujeito à Disponibilidade</p>
+            <p class="mb-2">
+              Veículo similar a: Renault Kwid 1.0, Fiat Mobi 1.0, Fiat Uno 1.0,
+              dentre outros.
+            </p>
+            <p class="fw-lighter">
+              <small>
+                Sua reserva garante um dos carros desse grupo.<br />
+                Modelo sujeito à disponibilidade da agência.
+              </small>
+            </p>
+          </div>
+
+          <!-- DETALHES DO VEICULO -->
+          <app-accordion-card [detailsVehicle]="item.acessorios"></app-accordion-card>
+          <p><small>*A taxa de aluguel ({{item.tarifa.percentualTaxaServico}}%) ainda não está inclusa nesse
+              valor.</small></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

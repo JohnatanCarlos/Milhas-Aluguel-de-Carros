@@ -19,18 +19,17 @@
           </mat-form-field>
 
           <mat-form-field appearance="fill" class="col-12 col-lg-3">
-            <mat-label>Enter a date range</mat-label>
+            <mat-label>Período da locação</mat-label>
             <mat-date-range-input [rangePicker]="picker">
-              <input matStartDate placeholder="Start date">
-              <input matEndDate placeholder="End date">
+              <input matStartDate placeholder="Data retirada">
+              <input matEndDate placeholder="Data devolução">
             </mat-date-range-input>
-            <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-date-range-picker #picker></mat-date-range-picker>
           </mat-form-field>
 
           <mat-form-field appearance="fill" class="col-12 col-lg-3">
-            <mat-label>Hora</mat-label>
+            <mat-label>Horário</mat-label>
             <mat-select>
               <mat-option value="one">12:30</mat-option>
               <mat-option value="one">12:45</mat-option>

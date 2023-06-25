@@ -3,7 +3,7 @@
 
 .header {
   @include center;
-  background-color: $main-color-1;
+  background-color: $color-base-primary;
   padding: 15px 30px;
 
   img {
@@ -36,7 +36,7 @@
     }
 
     div > i {
-      color: $main-color-3;
+      color: $color-base-emphasis;
       font-size: 16px;
       padding-right: 10px;
     }

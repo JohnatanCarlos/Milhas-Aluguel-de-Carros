@@ -11,6 +11,8 @@ import { CardAccessoryModule } from 'app/shared/components/card-accessory/card-a
 import { CardAdditionalModule } from 'app/shared/components/card-additional/card-additional.module';
 import { AccordionDetailsModule } from 'app/shared/components/accordion-card/accordion-card.module';
 import {DividerModule} from 'primeng/divider';
+import { MatButtonModule } from '@angular/material/button';
+import { ReservationGroupsComponent } from './reservation-groups/reservation-groups.component';
 
 @NgModule({
   imports: [
@@ -18,14 +20,14 @@ import {DividerModule} from 'primeng/divider';
     RouterModule,
     CarouselModule,
     AccordionModule,
-    ButtonModule,
+    MatButtonModule,
     DividerModule,
     CardAccessoryModule,
     CardAdditionalModule,
     AccordionDetailsModule
   ],
-  exports: [ReservationComponent, RatesAdditionalComponent],
-  declarations: [ReservationComponent, RatesAdditionalComponent],
+  exports: [ReservationComponent, ReservationGroupsComponent, RatesAdditionalComponent],
+  declarations: [ReservationComponent, ReservationGroupsComponent, RatesAdditionalComponent],
   providers: [],
 })
 export class ReservationModule {}

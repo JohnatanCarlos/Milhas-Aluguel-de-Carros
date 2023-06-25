@@ -5,6 +5,7 @@ import { RegisterComponent } from './modules/authentication/register/register.co
 import { SignInComponent } from './modules/authentication/sign-in/sign-in.component';
 import { HomeComponent } from './modules/home/home.component';
 import { ReservationComponent } from './modules/reservation/reservation.component';
+import { ReservationGroupsComponent } from './modules/reservation/reservation-groups/reservation-groups.component';
 
 const routes: Routes = [
   {
@@ -24,7 +25,7 @@ const routes: Routes = [
   },
   {
     path: 'reservas/passo-2',
-    component: ReservationComponent,
+    component: ReservationGroupsComponent,
     data: {disabledSearch: true}
   },
   {

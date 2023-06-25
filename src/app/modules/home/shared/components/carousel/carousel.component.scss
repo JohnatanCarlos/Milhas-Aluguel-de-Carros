@@ -8,8 +8,8 @@
   width: 40px;
   height: 40px;
   background-color: transparent;
-  color: $main-color-3;
-  border: 1px solid $main-color-1;
+  color: $color-base-emphasis;
+  border: 1px solid $color-base-primary;
   border-radius: 50%;
   transition: 0.3s;
 
@@ -19,9 +19,9 @@
 }
 
 .swiper-button-prev:hover {
-  background-color: $main-color-0;
+  background-color: $color-background-dark;
 }
 
 .swiper-button-next:hover {
-  background-color: $main-color-0;
+  background-color: $color-background-dark;
 }

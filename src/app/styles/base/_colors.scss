@@ -17,8 +17,9 @@ $complementary-color-0: #A986FE;
 
 $color-base-surface: #F0F0F0;
 $color-base-on-surface: #292929;
-$color-base-primary: #8B2CE1;
-$color-base-secondary: #EDEDED;
+$color-base-primary: #025E29;
+$color-base-secondary: #78DE1E;
+$color-base-emphasis: #F0A501;
 $color-base-interactive: #0C41ED;
 $color-base-error: #F55D45;
 $color-base-warning: #E9E233;
@@ -27,7 +28,7 @@ $color-base-informational: #34D1E3;
 
 // Use para cor de fundo
 $color-background-light: #FFFFFF;
-$color-background-dark: #2D0B4C;
+$color-background-dark: #004521;
 
 // Use como cor de superfície, por cima do background, como fundo de cards
 $color-surface-default: #FAFAFA;
@@ -44,7 +45,7 @@ $color-surface-informational: #D6FAFF;
 $color-text-bg-light-default: #292929;
 $color-text-bg-light-subdued: #666666;
 $color-text-bg-light-disabled: #A3A3A3;
-$color-text-bg-light-action: #7A22D3;
+$color-text-bg-light-action: #014D2A;
 $color-text-bg-light-error: #8F2100;
 $color-text-bg-light-warning: #545208;
 $color-text-bg-light-success: #005238;
@@ -95,7 +96,7 @@ $color-action-error-hover: #6B1900;
 $color-action-error-disabled: #FFE5E0;
 
 // Use como ações primárias como em botões, ícones, texto de navegação
-$color-focused-default: #7A22D3;
+$color-focused-default: #014D2A;
 
 // Use como uma opção quando quiser dar destaque
 $color-decorative-text-one: #49157F;
@@ -107,3 +108,15 @@ $color-decorative-surface-five: #8B2CE1;
 $color-decorative-surface-six: #FF5757;
 $color-decorative-surface-seven: #E9E233;
 $color-decorative-surface-eight: #49157F;
+
+
+
+
+// CORES SUBSTITUIDAS
+  // $color-base-primary: #8B2CE1;
+  // $color-base-secondary: #EDEDED;
+
+  // $color-background-dark: #2D0B4C;
+
+// $color-text-bg-light-action: #7A22D3;
+// $color-focused-default: #7A22D3;
