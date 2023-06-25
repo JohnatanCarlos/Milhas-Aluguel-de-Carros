@@ -2,7 +2,7 @@
   <p-steps [model]="items" [activeIndex]="currentStep"></p-steps>
 
   <div class="row">
-    <h3>{{title}}</h3>
+    <h3>Tarifas e Adicionais</h3>
   </div>
 
   <div class="row pb-5">
@@ -40,18 +40,8 @@
         </div>
         <div class="col-6" routerLink="/reservas/passo-3">
           <div class="card__select">
-            <div class="d-flex justify-content-between">
-              <p>Oferta Promo</p>
-              <div class="card__button-circle">
-                <i class="pi pi-angle-double-right" style="font-size: 19px"></i>
-              </div>
-            </div>
-            <div class="d-flex">
-              <div class="col-4 mr-3 card__select-value"><strong>R$ {{item.tarifa.valorDiaria}}</strong></div>
-              <div class="col-8 card__select-description">
-                <div *ngFor="let atributo of item.atributos"><i class="pi pi-check"></i><small> {{atributo}}</small></div>
-                <!-- <div><i class="pi pi-check"></i> <small> Cancelamento Grátis até 24 horas da retirada</small></div> -->
-              </div>
+            <div class="col-8 card__select-description">
+              <div *ngFor="let atributo of item.atributos"><i class="pi pi-check"></i><small> {{atributo}}</small></div>
             </div>
           </div>
         </div>
@@ -60,6 +50,7 @@
       <!-- ADICIONAIS -->
       <app-rates-additional></app-rates-additional>
 
+      <button  mat-raised-button color="primary"> CONTINUAR </button>
     </div>
 
 
@@ -161,12 +152,5 @@
       </div>
     </div>
 
-    <div class="col-7 d-flex flex-row-reverse">
-      <button
-        mat-raised-button
-        color="primary">
-        CONTINUAR
-      </button>
-    </div>
   </div>
 </div>

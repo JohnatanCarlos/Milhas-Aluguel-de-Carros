@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 
 export class ReservationGroupsComponent implements OnInit {
 
+  flippedCards: boolean[] = [];
   items: any[];
   currentStep: number
   products: any[];
@@ -18,7 +19,7 @@ export class ReservationGroupsComponent implements OnInit {
   title: string;
   isScrollToFixed = false;
 
-  constructor(private router: Router, private renderer: Renderer2, private el: ElementRef) { }
+  constructor(private router: Router) { }
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -28,8 +29,8 @@ export class ReservationGroupsComponent implements OnInit {
 
   }
 
-  ngOnInit() {
-    this.setTitle(this.router.url);
+  ngOnInit(): void {
+    this.currentStep = 1;
 
     this.ofertas = [
       {
@@ -277,16 +278,11 @@ export class ReservationGroupsComponent implements OnInit {
 
   }
 
-  setTitle(urlCurrent: string): void {
-    if(urlCurrent == '/reservas/passo-2'){
-      this.currentStep = 1;
-      this.title = 'Selecione o melhor grupo de carro e tarifa para você';
-    }else if(urlCurrent == '/reservas/passo-3'){
-      this.currentStep = 2;
-      this.title = 'Tarifas e Adicionais';
-    }else{
-      this.title = 'Default';
-    }
+  flipCard(index: number): void {
+    this.flippedCards[index] = !this.flippedCards[index];
   }
 
+  nextStep(): void {
+    this.router.navigate(['reservas/passo-3']);
+  }
 }
