@@ -13,6 +13,7 @@ import { AccordionDetailsModule } from 'app/shared/components/accordion-card/acc
 import {DividerModule} from 'primeng/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { ReservationGroupsComponent } from './reservation-groups/reservation-groups.component';
+import { DetailsGroupsModule } from 'app/shared/components/details-groups/details-groups.module';
 
 @NgModule({
   imports: [
@@ -24,7 +25,8 @@ import { ReservationGroupsComponent } from './reservation-groups/reservation-gro
     DividerModule,
     CardAccessoryModule,
     CardAdditionalModule,
-    AccordionDetailsModule
+    AccordionDetailsModule,
+    DetailsGroupsModule
   ],
   exports: [ReservationComponent, ReservationGroupsComponent, RatesAdditionalComponent],
   declarations: [ReservationComponent, ReservationGroupsComponent, RatesAdditionalComponent],

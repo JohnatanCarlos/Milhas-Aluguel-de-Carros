@@ -12,7 +12,7 @@
         <div class="flip-card-front">
           <div class="reservation-groups__list-card">
             <div class="text-center">
-              <p><strong>Grupo {{item.grupoVeiculo.grupo}} - {{item.grupoVeiculo.nome}}</strong></p>
+              <p><strong>{{item.grupoVeiculo.grupo}} - {{item.grupoVeiculo.nome}}</strong></p>
 
               <p-carousel [value]="products" orientation="horizontal" [showNavigators]="false">
                 <ng-template let-products pTemplate="item">
@@ -42,7 +42,7 @@
                 </p>
               </div>
 
-              <button class="col-12 my-3" color="primary" mat-flat-button (click)="nextStep()">ESCOLHER GRUPO</button>
+              <button mat-flat-button  color="primary" class="col-12 my-3" (click)="nextStep()">ESCOLHER GRUPO</button>
 
               <button mat-button color="primary" (click)="flipCard(i)">Mostrar detalhes</button>
             </div>
@@ -54,12 +54,14 @@
           <div class="reservation-groups__list-card">
             <div class="row">
               <p><strong>Grupo {{item.grupoVeiculo.grupo}} - {{item.grupoVeiculo.nome}}</strong></p>
-              <div class="col-6" *ngFor="let detail of item.acessorios">
+              <!-- *ngFor="let detail of item.acessorios" -->
+              <app-details-groups [detailsGroup]="item.detalhes"></app-details-groups>
+              <!-- <div class="col-6">
                 <div class="accordion-card">
                   <i class="pi pi-qrcode"></i>
                   <span>{{detail?.descricao}}</span>
                 </div>
-              </div>
+              </div> -->
               <button mat-button color="primary" (click)="flipCard(i)">Esconder detalhes</button>
             </div>
           </div>

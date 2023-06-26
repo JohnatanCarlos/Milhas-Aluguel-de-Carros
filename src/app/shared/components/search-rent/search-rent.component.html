@@ -31,9 +31,7 @@
           <mat-form-field appearance="fill" class="col-12 col-lg-3">
             <mat-label>Horário</mat-label>
             <mat-select>
-              <mat-option value="one">12:30</mat-option>
-              <mat-option value="one">12:45</mat-option>
-              <mat-option value="two">13:00</mat-option>
+              <mat-option *ngFor="let option of times$ | async" [value]="option">{{option.exibicao}}</mat-option>
             </mat-select>
           </mat-form-field>
 

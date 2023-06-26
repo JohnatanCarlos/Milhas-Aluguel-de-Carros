@@ -1,3 +1,5 @@
+import { TimesService } from './../../services/times.service';
+import { Observable } from 'rxjs';
 import { AfterViewInit, ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ActivatedRoute, ActivationStart, Router } from '@angular/router';
 
@@ -12,8 +14,9 @@ export class SearchRentComponent implements OnInit {
   showLabelDevolution = true;
   disabledSearch = false;
   isOverlapSearch = false;
+  times$: Observable<any>
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private timesService: TimesService) {
     router.events.subscribe((event: any) => {
       if(event instanceof ActivationStart){
         this.disabledSearch = event.snapshot.data.disabledSearch;
@@ -23,8 +26,9 @@ export class SearchRentComponent implements OnInit {
     });
   }
   ngOnInit(): void {
-
+    this.times$ = this.timesService.getTimesAvailableOfDay();
   }
+
 
 
   showHideLabelDevolution(showLabelDevolution: boolean){

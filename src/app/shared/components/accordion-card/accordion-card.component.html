@@ -4,10 +4,5 @@
 </button>
 
 <div class="row" *ngIf="openDetails">
-  <div class="col-sm-12 col-md-12 col-lg-6" *ngFor="let detail of detailsVehicle">
-    <div class="accordion-card">
-      <i class="pi pi-qrcode"></i>
-      <span>{{detail?.descricao}}</span>
-    </div>
-  </div>
+  <app-details-groups [detailsGroup]="detailsVehicle"></app-details-groups>
 </div>
