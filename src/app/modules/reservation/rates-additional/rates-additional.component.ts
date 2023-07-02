@@ -37,4 +37,8 @@ export class RatesAdditionalComponent implements OnInit {
     }
   }
 
+  dataAccessory(event: any) {
+    console.log(event)
+  }
+
 }

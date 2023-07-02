@@ -1,130 +1,54 @@
-import { Component, ElementRef, HostListener, OnInit, Renderer2, ViewEncapsulation } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
+import { EventService } from './services/event.service';
+import { ReservationService } from './services/reservation-http.service';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reservation',
   templateUrl: 'reservation.component.html',
   styleUrls: ['./reservation.component.scss'],
-  host: {"class": "app-reservation"}
+  host: { class: 'app-reservation' },
 })
-
 export class ReservationComponent implements OnInit {
-
+  groupId: string | number;
   items: any[];
-  currentStep: number
-  products: any[];
-  ofertas: any[];
-  detailsVehicle: any[];
+  currentStep: number;
+  dataGroup: any;
   isScrollToFixed = false;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+    private reservationService: ReservationService,
+    private eventService: EventService
+  ) {}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
 
     this.isScrollToFixed = window.scrollY >= 275 ? true : false;
-
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.currentStep = 2;
-
-    this.ofertas = [
-      {
-        id: "123",
-        atributos: [
-          "Km Livre",
-          "Cancelamento Grátis até 24 horas da retirada",
-        ],
-        disponivel: true,
-        quantidadeDiarias: 30,
-        acessorios: [
-          {
-              descricao: "4 portas",
-              codigoAcessorio: 2
-          },
-          {
-              descricao: "Ar-condicionado",
-              codigoAcessorio: 3
-          },
-          {
-              descricao: "Vidro elétrico",
-              codigoAcessorio: 4
-          },
-          {
-              descricao: "Trava elétrica",
-              codigoAcessorio: 5
-          },
-          {
-              descricao: "Air bag",
-              codigoAcessorio: 6
-          },
-          {
-              descricao: "Dir. Hidráulica",
-              codigoAcessorio: 9
-          },
-          {
-              descricao: "ABS",
-              codigoAcessorio: 28
-          }
-        ],
-        grupoVeiculo: {
-          categoria: "Passeio",
-          grupo: "B",
-          nome: "Compacto Com Ar",
-          imagemPadrao: "https://www.localiza.com/brasil-site/geral/Frota/MOBI.png",
-          veiculos: [
-            {
-              blindado: false,
-              nome: "Fiat Mobi 1.0",
-              padraoGrupo: true,
-              urlImagem: "https://www.localiza.com/brasil-site/geral/Frota/MOBI.png"
-            },
-            {
-              blindado: false,
-              nome: "Fiat Uno 1.0",
-              padraoGrupo: false,
-              urlImagem: "https://www.localiza.com/brasil-site/geral/Frota/NUNB.png"
-            },
-            {
-              blindado: false,
-              nome: "Renault Kwid 1.0",
-              padraoGrupo: false,
-              urlImagem: "https://www.localiza.com/brasil-site/geral/Frota/KWID.png"
-            }
-          ]
-        },
-        tarifa: {
-          existeDescontoPromocional: false,
-          percentualTaxaServico: 12,
-          valorDiaria: "89,70",
-          valorHoraExtra: 12,
-          valorProtecaoCarro: 207,
-
-        },
-        valorTotal: 2274.52
-      }
-    ]
-
     this.items = [
-      {label: 'Local, Data e Hora da Reserva'},
-      {label: 'Grupos de Carros'},
-      {label: 'Tarifas e Adicionais'},
-      {label: 'Dados Cadastrais e Pessoais '},
+      { label: 'Local, Data e Hora da Reserva' },
+      { label: 'Grupos de Carros' },
+      { label: 'Tarifas e Adicionais' },
+      { label: 'Dados Cadastrais e Pessoais ' },
     ];
 
-    this.products = [
-      {
-        name: "Fiat Mobi",
-        image: "https://img0.icarros.com/dbimg/imgnoticia/4/27348_1"
-      },
-      {
-        name: "Renault Kwid",
-        image: "https://www.karvi.com.br/blog/wp-content/uploads/2020/07/kwid-outsider-1-850x478.jpg"
-      }
-    ];
+    this.getGroup(this.eventService.getGroupId());
+  }
 
+  getGroup(groupId: any): void {
+    if(groupId) {
+      this.reservationService.getGroupById(groupId).subscribe(dataGroup => {
+        this.dataGroup = dataGroup;
+      });
+    }else {
+      // this.router.navigate([''])
+    }
   }
 
 }

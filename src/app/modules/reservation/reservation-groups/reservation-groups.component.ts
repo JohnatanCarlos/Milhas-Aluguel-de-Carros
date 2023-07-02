@@ -1,6 +1,7 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ReservationService } from '../services/reservation-http.service';
+import { EventService } from '../services/event.service';
 
 @Component({
   selector: 'app-reservation-groups',
@@ -13,12 +14,12 @@ export class ReservationGroupsComponent implements OnInit {
   items: any[];
   currentStep: number;
   products: any[];
-  ofertas: any[] = [];
+  groupsAvailables: any[] = [];
   detailsVehicle: any[];
   title: string;
   isScrollToFixed = false;
 
-  constructor(private router: Router, private reservationService: ReservationService) {}
+  constructor(private router: Router, private reservationService: ReservationService, private eventService: EventService) {}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -37,31 +38,20 @@ export class ReservationGroupsComponent implements OnInit {
       { label: 'Tarifas e Adicionais' },
       { label: 'Dados Cadastrais e Pessoais ' },
     ];
-
-    this.products = [
-      {
-        name: 'Fiat Mobi',
-        image: 'https://img0.icarros.com/dbimg/imgnoticia/4/27348_1',
-      },
-      {
-        name: 'Renault Kwid',
-        image:
-          'https://www.karvi.com.br/blog/wp-content/uploads/2020/07/kwid-outsider-1-850x478.jpg',
-      },
-    ];
   }
 
   flipCard(index: number): void {
     this.flippedCards[index] = !this.flippedCards[index];
   }
 
-  nextStep(): void {
+  nextStep(groupId: any): void {
+    this.eventService.sendGroupId(groupId);
     this.router.navigate(['reservas/passo-3']);
   }
 
   listGroupsAvailables(): void {
     this.reservationService.getGroupsAvailable().subscribe(groups => {
-      this.ofertas = groups;
+      this.groupsAvailables = groups;
     })
   }
 }

@@ -3,17 +3,13 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
-export class ReservationService {
+export class GroupOfCarsService {
   readonly URL = 'http://localhost:5000';
 
   constructor(private http: HttpClient) { }
 
-  getGroupsAvailable(): Observable<any> {
-    return this.http.get(`${this.URL}/groupsAvailable`);
-  }
-
-  getGroupById(id: any): Observable<any> {
-    return this.http.get(`${this.URL}/groupsAvailable/${id}`);
+  getGroups(): Observable<any> {
+    return this.http.get(`${this.URL}/groups`);
   }
 
 }

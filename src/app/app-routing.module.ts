@@ -6,6 +6,7 @@ import { SignInComponent } from './modules/authentication/sign-in/sign-in.compon
 import { HomeComponent } from './modules/home/home.component';
 import { ReservationComponent } from './modules/reservation/reservation.component';
 import { ReservationGroupsComponent } from './modules/reservation/reservation-groups/reservation-groups.component';
+import { GroupOfCarsComponent } from './modules/group-of-cars/group-of-cars.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,11 @@ const routes: Routes = [
   {
     path: 'login',
     component: SignInComponent,
+    data: {disabledSearch: true}
+  },
+  {
+    path: 'grupos-de-carros',
+    component: GroupOfCarsComponent,
     data: {disabledSearch: true}
   },
   {

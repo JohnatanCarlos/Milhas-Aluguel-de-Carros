@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-12 col-md-6 col-lg-4 flip-card" *ngFor="let item of dataGroups; let i = index">
+    <div class="flip-card-inner" [ngClass]="{'flipped': flippedCards[i]}">
+      <!-- Conteúdo do cartão frontal -->
+      <div class="flip-card-front">
+        <div class="reservation-groups__list-card">
+          <div class="text-center">
+            <p><strong>{{item.grupoVeiculo?.grupo}} - {{item.grupoVeiculo?.nome}}</strong></p>
+
+            <p-carousel [value]="item.grupoVeiculo.veiculos" orientation="horizontal" [showNavigators]="false">
+              <ng-template let-veiculo  pTemplate="item">
+                <img src="{{ veiculo.urlImagem }}" alt="imagens do grupo de veículos" width="100%" />
+              </ng-template>
+            </p-carousel>
+
+            <p>Fiat Mobi 1.0, Renault Kwid 1.0 ou similar*</p>
+            <p class="fw-lighter">
+              <small>
+                Sua reserva garante um dos carros desse grupo.<br />
+                Modelo sujeito à disponibilidade da agência.
+              </small>
+            </p>
+
+            <div class="reservation-groups__list-card--value" *ngIf="showValue">
+              <p>A partir de</p>
+              <p>
+                <span class="reservation-groups__list-card--value-currency"> R$ </span>
+                <span class="reservation-groups__list-card--value-amount"> 124,75 </span>
+                <span class="reservation-groups__list-card--value-day"> /dia </span>
+              </p>
+              <p>
+                <small>
+                  *A taxa de aluguel ({{item.tarifa.percentualTaxaServico}}%) ainda não está inclusa nesse valor.
+                </small>
+              </p>
+            </div>
+
+            <button mat-flat-button  color="primary" class="col-12 my-3" (click)="nextStep(item.id)">ESCOLHER GRUPO</button>
+
+            <button mat-button color="primary" (click)="flipCard(i)">Mostrar detalhes</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conteúdo do cartão de trás -->
+      <div class="flip-card-back">
+        <div class="reservation-groups__list-card">
+          <div class="row">
+            <p><strong>Grupo {{item.grupoVeiculo.grupo}} - {{item.grupoVeiculo.nome}}</strong></p>
+            <!-- *ngFor="let detail of item.acessorios" -->
+            <app-details-groups [detailsGroup]="item.detalhes"></app-details-groups>
+            <!-- <div class="col-6">
+              <div class="accordion-card">
+                <i class="pi pi-qrcode"></i>
+                <span>{{detail?.descricao}}</span>
+              </div>
+            </div> -->
+            <button mat-button color="primary" (click)="flipCard(i)">Esconder detalhes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

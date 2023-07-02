@@ -2,14 +2,14 @@
   <div class="acessorios-card__info">
     <div class="acessorios-card__info-title">
       <i class="pi pi-qrcode"></i>
-      <span>{{title}}</span>
+      <span>{{dataAccessory?.title}}</span>
     </div>
-    <p>R$ <span>{{value}}</span> / dia (unidade)</p>
+    <p>R$ <span>{{dataAccessory?.value}}</span> / dia (unidade)</p>
   </div>
 
   <div class="acessorios-card__count">
-    <i class="pi pi-minus" (click)="quantity('minus')"></i>
+    <i class="pi pi-minus" (click)="updateCountValue('minus')"></i>
     <span>{{countValue}}</span>
-    <i class="pi pi-plus" (click)="quantity('plus')"></i>
+    <i class="pi pi-plus" (click)="updateCountValue('plus')"></i>
   </div>
 </div>

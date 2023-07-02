@@ -7,22 +7,23 @@
 
   <div class="row pb-5">
     <div class="col-7">
-      <div class="row list-card" *ngFor="let item of ofertas">
+      <div class="row list-card">
         <div class="col-6 card__vehicle">
           <div class="text-center">
-            <p><strong>Grupo {{item.grupoVeiculo.grupo}} - {{item.grupoVeiculo.nome}}</strong></p>
+            <p><strong>{{dataGroup?.grupoVeiculo?.grupo}} - {{dataGroup?.grupoVeiculo?.nome}}</strong></p>
 
-            <p-carousel [value]="products" orientation="horizontal" [showNavigators]="false">
-              <ng-template let-products pTemplate="item">
-                <img src="{{ products.image }}" alt="" width="100%" />
-                <p>{{ products.name }}</p>
+            <p-carousel [value]="dataGroup?.grupoVeiculo?.veiculos" orientation="horizontal" [showNavigators]="false">
+              <ng-template let-veiculo pTemplate="dataGroup">
+                <img src="{{ veiculo.urlImagem }}" alt="" width="100%" />
+                <p>{{ veiculo.nome }}</p>
               </ng-template>
             </p-carousel>
 
             <div class="mb-3">
               <p class="h6 mb-2 text-decoration-underline ">Sujeito à Disponibilidade</p>
               <p class="mb-2">
-                Veículo similar a: Renault Kwid 1.0, Fiat Mobi 1.0, Fiat Uno 1.0,
+                Veículo similar a:
+                <span *ngFor="let item of dataGroup?.grupoVeiculo?.veiculos">{{item.nome}}, </span>
                 dentre outros.
               </p>
               <p class="fw-lighter">
@@ -34,14 +35,14 @@
             </div>
 
             <!-- DETALHES DO VEICULO -->
-            <app-accordion-card [detailsVehicle]="item.acessorios"></app-accordion-card>
-            <p><small>*A taxa de aluguel ({{item.tarifa.percentualTaxaServico}}%) ainda não está inclusa nesse valor.</small></p>
+            <app-accordion-card [detailsVehicle]="dataGroup?.detalhes"></app-accordion-card>
+            <p><small>*A taxa de aluguel ({{dataGroup?.tarifa?.percentualTaxaServico}}%) ainda não está inclusa nesse valor.</small></p>
           </div>
         </div>
         <div class="col-6" routerLink="/reservas/passo-3">
           <div class="card__select">
             <div class="col-8 card__select-description">
-              <div *ngFor="let atributo of item.atributos"><i class="pi pi-check"></i><small> {{atributo}}</small></div>
+              <div *ngFor="let atributo of dataGroup?.atributos"><i class="pi pi-check"></i><small> {{atributo}}</small></div>
             </div>
           </div>
         </div>

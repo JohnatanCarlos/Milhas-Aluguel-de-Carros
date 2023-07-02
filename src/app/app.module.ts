@@ -11,6 +11,7 @@ import { ReservationModule } from './modules/reservation/reservation.module';
 import { HeaderModule } from './shared/components/header/header.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SignInModule } from './modules/authentication/sign-in/sign-in.module';
+import { GroupOfCarsModule } from './modules/group-of-cars/group-of-cars.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { SignInModule } from './modules/authentication/sign-in/sign-in.module';
     HomeModule,
     HeaderModule,
     ReservationModule,
+    GroupOfCarsModule,
     RegisterModule,
     SignInModule,
     BrowserAnimationsModule,
