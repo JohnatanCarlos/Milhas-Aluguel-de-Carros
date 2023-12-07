@@ -9,20 +9,31 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 export class CardAccessoryComponent {
   @Input() dataAccessory: any;
-  @Output() totalAccessory: any = new EventEmitter();
+  @Input() totalItens: any[];
+  @Output() totalAccessory: EventEmitter<any> = new EventEmitter();
 
   countValue = 0;
-  totalItens: any[] = [];
 
   updateCountValue(option: string): void {
-    if(option === 'plus'){
+    if (option === 'plus') {
       this.countValue++;
-    }else if (option === 'minus'){
-      if(this.countValue > 0){
+    } else if (option === 'minus') {
+      if (this.countValue > 0) {
         this.countValue--;
       }
     }
 
+    this.updateTotalItens();
+  }
+
+  removeAccessoryFromTotal(id: any): void {
+    const index = this.totalItens.findIndex(item => item.id === id);
+    if (index !== -1) {
+      this.totalItens.splice(index, 1);
+    }
+  }
+
+  updateTotalItens(): void {
     let newItem = {
       id: this.dataAccessory.id,
       title: this.dataAccessory.title,
@@ -30,22 +41,18 @@ export class CardAccessoryComponent {
       quantity: this.countValue
     };
 
-    // console.log(this.dataAccessory.id)
+    if (newItem.quantity === 0) {
+      this.removeAccessoryFromTotal(newItem.id);
+    } else {
+      const existingItem = this.totalItens.find(item => item.id === newItem.id);
 
-    // Verificar se o item já existe no array totalItens
-    const existingItem = !!this.totalItens.find(item => item.id === this.dataAccessory.id);
-    console.log(existingItem);
-    this.totalItens.push(newItem);
-
-    // if (false) {
-    //   // Atualizar a quantidade do item existente
-    //   console.log(`nao vou fazer nada`)
-    // } else {
-    //   // Adicionar o novo item ao array totalItens
-    //   this.totalItens.push(newItem);
-    // }
-
-    // Emitir o evento totalAccessory com a lista atualizada
+      if (!existingItem) {
+        this.totalItens.push(newItem);
+      } else {
+        existingItem.quantity = newItem.quantity;
+      }
+    }
+    console.log(this.totalItens)
     this.totalAccessory.emit(this.totalItens);
   }
 }

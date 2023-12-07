@@ -8,8 +8,13 @@ import { Component, OnInit } from '@angular/core';
 
 export class SignInComponent implements OnInit {
   hidePassword = true;
+  isRegister = false;
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
+
+  toggleOverlay(): void {
+    this.isRegister = !this.isRegister;
+  }
 }

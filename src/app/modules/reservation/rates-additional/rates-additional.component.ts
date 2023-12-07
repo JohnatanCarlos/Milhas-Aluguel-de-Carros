@@ -23,6 +23,8 @@ export class RatesAdditionalComponent implements OnInit {
     {id: 4, title: "Localiza Way", value: "25,00"},
   ];
 
+  totalItens: any[] = [];
+
   constructor(private router: Router) { }
 
   ngOnInit() {
@@ -39,6 +41,13 @@ export class RatesAdditionalComponent implements OnInit {
 
   dataAccessory(event: any) {
     console.log(event)
+  }
+
+
+
+  updateTotal(totalAtualizado: any[]) {
+    this.totalItens = totalAtualizado;
+    console.log(this.totalItens)
   }
 
 }

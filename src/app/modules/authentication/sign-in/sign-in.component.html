@@ -1,4 +1,4 @@
-
+<!--
   <div class="signIn">
     <form class="signIn__form">
       <p class="h5">Acesse sua conta</p>
@@ -21,4 +21,47 @@
         <a href="#" class="mb-4" style="display: flex; justify-content: flex-end;">Esqueci minha senha</a>
       </div>
     </form>
+  </div> -->
+
+<div class="container" [ngClass]="{'right-panel-active': isRegister}">
+  <div class="signIn">
+    <div class="form-container sign-up-container">
+      <form>
+        <h1>Cadastre-se</h1>
+        <br/>
+        <input matInput type="text" placeholder="Nome" />
+        <input matInput type="email" placeholder="CPF" />
+        <input matInput type="password" placeholder="Senha" />
+
+        <button style="margin-top: 9px">Sign Up</button>
+      </form>
+    </div>
+
+    <div class="form-container sign-in-container">
+      <form>
+        <h1>Entrar</h1>
+        <br/>
+        <input matInput type="email" placeholder="Email" />
+        <input matInput type="password" placeholder="Password" />
+
+        <a href="#">Esqueceu sua senha?</a>
+        <button>Sign In</button>
+      </form>
+    </div>
+
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-left">
+          <h1>Bem vindo de volta!</h1>
+          <p>para se manter conectado conosco, faça login com suas informações pessoais</p>
+          <button class="ghost mt-5" id="signIn" (click)="toggleOverlay()">Sign In</button>
+        </div>
+        <div class="overlay-panel overlay-right">
+          <h1>Criar uma conta!</h1>
+          <p>Cadastre-se se ainda não tiver uma conta...</p>
+          <button class="ghost" id="signUp" (click)="toggleOverlay()">Sign Up</button>
+        </div>
+      </div>
+    </div>
   </div>
+</div>
