@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 
 @Component({
@@ -9,50 +9,31 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 export class CardAccessoryComponent {
   @Input() dataAccessory: any;
-  @Input() totalItens: any[];
+  totalItens: any[] = [];
   @Output() totalAccessory: EventEmitter<any> = new EventEmitter();
 
-  countValue = 0;
-
-  updateCountValue(option: string): void {
+  updateCountValue(option: string, accessory: any): void {
     if (option === 'plus') {
-      this.countValue++;
-    } else if (option === 'minus') {
-      if (this.countValue > 0) {
-        this.countValue--;
-      }
-    }
-
-    this.updateTotalItens();
-  }
-
-  removeAccessoryFromTotal(id: any): void {
-    const index = this.totalItens.findIndex(item => item.id === id);
-    if (index !== -1) {
-      this.totalItens.splice(index, 1);
-    }
-  }
-
-  updateTotalItens(): void {
-    let newItem = {
-      id: this.dataAccessory.id,
-      title: this.dataAccessory.title,
-      value: '25,00',
-      quantity: this.countValue
-    };
-
-    if (newItem.quantity === 0) {
-      this.removeAccessoryFromTotal(newItem.id);
-    } else {
-      const existingItem = this.totalItens.find(item => item.id === newItem.id);
-
+      accessory.quantity++;
+      const existingItem = this.totalItens.find(item => item.id === accessory.id);
       if (!existingItem) {
-        this.totalItens.push(newItem);
+        this.totalItens.push(accessory);
       } else {
-        existingItem.quantity = newItem.quantity;
+        existingItem.quantity = accessory.quantity;
+      }
+
+    } else if (option === 'minus') {
+      if (accessory.quantity > 0) {
+        accessory.quantity--;
+
+        if(accessory.quantity === 0) {
+          this.totalItens = this.totalItens.filter(item => item.id !== item.id)
+        }
       }
     }
-    console.log(this.totalItens)
+
+    // console.log(this.totalItens)
     this.totalAccessory.emit(this.totalItens);
   }
+
 }

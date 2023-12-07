@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card-additional',
@@ -7,7 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class CardAdditionalComponent implements OnInit {
-  @Input() dataSource: any;
+  @Input() dataAdditional: any;
+  @Output() totalAditional: EventEmitter<any> = new EventEmitter();
+
   selectedItems: any[] = [];
 
   constructor() { }
@@ -20,6 +22,7 @@ export class CardAdditionalComponent implements OnInit {
     } else {
       this.selectedItems = this.selectedItems.filter(item => item !== additional);
     }
-    console.log(this.selectedItems)
+    // console.log(this.selectedItems)
+    this.totalAditional.emit(this.selectedItems)
   }
 }

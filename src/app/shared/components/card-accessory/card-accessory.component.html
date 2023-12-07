@@ -1,15 +1,15 @@
-<div class="acessorios-card">
+<div class="acessorios-card" *ngFor="let accessory of dataAccessory">
   <div class="acessorios-card__info">
     <div class="acessorios-card__info-title">
       <i class="pi pi-qrcode"></i>
-      <span>{{dataAccessory?.title}}</span>
+      <span>{{accessory?.title}}</span>
     </div>
-    <p>R$ <span>{{dataAccessory?.value}}</span> / dia (unidade)</p>
+    <p>R$ <span>{{accessory?.value}}</span> / dia (unidade)</p>
   </div>
 
   <div class="acessorios-card__count">
-    <i class="pi pi-minus" (click)="updateCountValue('minus')"></i>
-    <span>{{countValue}}</span>
-    <i class="pi pi-plus" (click)="updateCountValue('plus')"></i>
+    <i class="pi pi-minus" (click)="updateCountValue('minus', accessory)"></i>
+    <span>{{accessory.quantity}}</span>
+    <i class="pi pi-plus" (click)="updateCountValue('plus', accessory)"></i>
   </div>
 </div>

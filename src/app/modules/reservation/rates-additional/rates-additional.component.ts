@@ -17,10 +17,10 @@ export class RatesAdditionalComponent implements OnInit {
   ];
 
   accessorys = [
-    {id: 1, title: "Cadeira de bebê", value: "25,00"},
-    {id: 2, title: "Assento de elevação", value: "25,00"},
-    {id: 3, title: "Bebê conforto", value: "25,00"},
-    {id: 4, title: "Localiza Way", value: "25,00"},
+    {id: 1, title: "Cadeira de bebê", value: "25,00", quantity: 0},
+    {id: 2, title: "Assento de elevação", value: "25,00", quantity: 0},
+    {id: 3, title: "Bebê conforto", value: "25,00", quantity: 0},
+    {id: 4, title: "Localiza Way", value: "25,00", quantity: 0}
   ];
 
   totalItens: any[] = [];
