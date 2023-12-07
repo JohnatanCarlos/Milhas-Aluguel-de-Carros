@@ -1,17 +1,17 @@
-<div class="col-12 adicionais-card">
+<div class="col-12 adicionais-card" *ngFor="let additional of dataSource">
   <div class=" adicionais-card__header">
     <div class="adicionais-card__header-title">
       <i class="pi pi-qrcode"></i>
-      <span>{{title}}</span>
+      <span>{{additional.title}}</span>
     </div>
 
     <div class="adicionais-card__header-title">
-      <div class="adicionais-card__header-value">R$ {{value}} / dia</div>
-      <input id="adicional-check" type="checkbox" />
+      <div class="adicionais-card__header-value">R$ {{additional.value}} / dia</div>
+      <input id="adicional-check" type="checkbox" (change)="handleCheckboxChange($event, additional)"/>
     </div>
   </div>
 
-  <div class="adicionais-card__footer" *ngIf="description">
-    <p><small>{{description}}</small></p>
+  <div class="adicionais-card__footer" *ngIf="additional.description">
+    <p><small>{{additional.description}}</small></p>
   </div>
 </div>

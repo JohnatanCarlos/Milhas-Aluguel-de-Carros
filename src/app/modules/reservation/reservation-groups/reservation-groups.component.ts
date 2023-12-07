@@ -23,7 +23,7 @@ export class ReservationGroupsComponent implements OnInit {
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
 
     this.isScrollToFixed = window.scrollY >= 275 ? true : false;
   }

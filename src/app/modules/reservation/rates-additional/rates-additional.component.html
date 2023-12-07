@@ -5,8 +5,8 @@
 
   <!-- Adicionais de proteçóes -->
   <div class="row py-3">
-    <div class="col-12 p-0" *ngFor="let additional of additionals">
-      <app-card-additional [title]="additional.title" [value]="additional.value" [description]="additional.description"></app-card-additional>
+    <div class="col-12 p-0">
+      <app-card-additional [dataSource]="additionals"></app-card-additional>
     </div>
   </div>
 

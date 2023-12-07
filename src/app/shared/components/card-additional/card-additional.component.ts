@@ -7,11 +7,19 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 
 export class CardAdditionalComponent implements OnInit {
-  @Input() title: string;
-  @Input() value: string;
-  @Input() description: any;
+  @Input() dataSource: any;
+  selectedItems: any[] = [];
 
   constructor() { }
 
   ngOnInit() { }
+
+  handleCheckboxChange(event: any, additional: any): void {
+    if (event.target.checked) {
+      this.selectedItems.push(additional);
+    } else {
+      this.selectedItems = this.selectedItems.filter(item => item !== additional);
+    }
+    console.log(this.selectedItems)
+  }
 }
