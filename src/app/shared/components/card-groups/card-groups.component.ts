@@ -7,17 +7,14 @@ import { EventService } from 'app/modules/reservation/services/event.service';
   templateUrl: './card-groups.component.html',
   styleUrls: ['./card-groups.component.scss']
 })
-export class CardGroupsComponent implements OnInit {
+export class CardGroupsComponent {
   @Input() dataGroups: any;
   @Input() showValue = true;
+  @Input() isOnlyOneCard = false;
 
   flippedCards: boolean[] = [];
 
   constructor(private router: Router, private eventService: EventService) { }
-
-  ngOnInit() {
-  }
-
 
   flipCard(index: number): void {
     this.flippedCards[index] = !this.flippedCards[index];

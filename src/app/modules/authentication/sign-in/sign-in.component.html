@@ -1,66 +1,118 @@
-<!--
-  <div class="signIn">
-    <form class="signIn__form">
-      <p class="h5">Acesse sua conta</p>
-      <mat-form-field appearance="fill" class="col-12">
-        <mat-label>Email ou CPF</mat-label>
-        <input matInput />
-      </mat-form-field>
+<div class="container sign-in">
+  <div class="flip-card" [class.flipped]="isFlipped">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <form>
+          <h1>Acesse sua conta</h1>
+          <mat-form-field>
+            <input matInput type="email" placeholder="CPF" />
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput placeholder="Senha" [type]="hidePassword ? 'password' : 'text'">
+            <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+              <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
 
-      <mat-form-field appearance="fill" class="col-12">
-        <mat-label>Senha</mat-label>
-        <input matInput [type]="hidePassword ? 'password' : 'text'">
-        <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
-          <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
-        </button>
-      </mat-form-field>
-      <button mat-raised-button color="primary">ENTRAR</button>
+          <a href="#">Esqueci minha senha</a>
+          <button mat-raised-button type="button" color="primary" class="col-12">Entrar</button>
 
-      <div class="signIn__footer">
-        <a href="#" class="mb-4" routerLink="/cadastro" routerLinkActive="router-link-active" style="display: flex; justify-content: flex-end;">Ainda não sou cliente</a>
-        <a href="#" class="mb-4" style="display: flex; justify-content: flex-end;">Esqueci minha senha</a>
+          <hr>
+
+          <div>
+            <h1>Criar uma conta!</h1>
+            <p>Cadastre-se se ainda não tiver uma conta...</p>
+            <button mat-stroked-button color="accent" type="button" class="col-12" (click)="flipCard()">Criar conta</button>
+          </div>
+        </form>
       </div>
-    </form>
-  </div> -->
 
-<div class="container" [ngClass]="{'right-panel-active': isRegister}">
-  <div class="signIn">
-    <div class="form-container sign-up-container">
-      <form>
-        <h1>Cadastre-se</h1>
-        <br/>
-        <input matInput type="text" placeholder="Nome" />
-        <input matInput type="email" placeholder="CPF" />
-        <input matInput type="password" placeholder="Senha" />
+      <div class="flip-card-back">
+        <!-- <button>back</button> -->
+        <form [ngSwitch]="currentStep">
+          <h1>Cadastre-se</h1>
 
-        <button style="margin-top: 9px">Sign Up</button>
-      </form>
-    </div>
+          <ng-container *ngSwitchCase="1">
+            <mat-form-field>
+              <input matInput type="text" placeholder="Nome" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="email" placeholder="CPF" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="date" placeholder="Data de Nascimento" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Sexo" />
+            </mat-form-field>
+          </ng-container>
 
-    <div class="form-container sign-in-container">
-      <form>
-        <h1>Entrar</h1>
-        <br/>
-        <input matInput type="email" placeholder="Email" />
-        <input matInput type="password" placeholder="Password" />
+          <ng-container *ngSwitchCase="2">
+            <mat-form-field>
+              <input matInput type="text" placeholder="CEP" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Endereço" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Número" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Complemento" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Bairro" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Cidade" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="text" placeholder="Estado" />
+            </mat-form-field>
+          </ng-container>
 
-        <a href="#">Esqueceu sua senha?</a>
-        <button>Sign In</button>
-      </form>
-    </div>
+          <ng-container *ngSwitchCase="3">
+            <mat-form-field>
+              <input matInput type="text" placeholder="Celular" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="text" placeholder="E-mail" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="email" placeholder="Confirmação E-mail" />
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Senha" [type]="hidePassword ? 'password' : 'text'">
+              <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput placeholder="Confirme sua senha" [type]="hidePassword ? 'password' : 'text'">
+              <button mat-icon-button matSuffix type="button" (click)="hidePassword = !hidePassword" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hidePassword">
+                <mat-icon>{{hidePassword ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          </ng-container>
 
-    <div class="overlay-container">
-      <div class="overlay">
-        <div class="overlay-panel overlay-left">
-          <h1>Bem vindo de volta!</h1>
-          <p>para se manter conectado conosco, faça login com suas informações pessoais</p>
-          <button class="ghost mt-5" id="signIn" (click)="toggleOverlay()">Sign In</button>
-        </div>
-        <div class="overlay-panel overlay-right">
-          <h1>Criar uma conta!</h1>
-          <p>Cadastre-se se ainda não tiver uma conta...</p>
-          <button class="ghost" id="signUp" (click)="toggleOverlay()">Sign Up</button>
-        </div>
+          <button
+            mat-raised-button
+            color="accent"
+            type="button"
+            class="col-12"
+            (click)="nextStep()">
+            {{currentStep === 3 ? 'Finalizar' : 'Avançar'}}
+          </button>
+
+          <button
+            mat-stroked-button
+            color="accent"
+            type="button"
+            class="col-12"
+            (click)="flipCard()">
+            Entrar
+          </button>
+        </form>
       </div>
     </div>
   </div>

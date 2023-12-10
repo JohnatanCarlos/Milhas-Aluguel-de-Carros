@@ -1,6 +1,6 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ReservationService } from '../services/reservation-http.service';
+import { ReservationHttpService } from '../services/reservation-http.service';
 import { EventService } from '../services/event.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class ReservationGroupsComponent implements OnInit {
   title: string;
   isScrollToFixed = false;
 
-  constructor(private router: Router, private reservationService: ReservationService, private eventService: EventService) {}
+  constructor(private router: Router, private reservationHttpService: ReservationHttpService, private eventService: EventService) {}
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
@@ -50,7 +50,7 @@ export class ReservationGroupsComponent implements OnInit {
   }
 
   listGroupsAvailables(): void {
-    this.reservationService.getGroupsAvailable().subscribe(groups => {
+    this.reservationHttpService.getGroupsAvailable().subscribe(groups => {
       this.groupsAvailables = groups;
     })
   }

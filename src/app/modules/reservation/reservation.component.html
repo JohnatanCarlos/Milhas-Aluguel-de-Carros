@@ -34,7 +34,6 @@
               </p>
             </div>
 
-            <!-- DETALHES DO VEICULO -->
             <app-accordion-card [detailsVehicle]="dataGroup?.detalhes"></app-accordion-card>
             <p><small>*A taxa de aluguel ({{dataGroup?.tarifa?.percentualTaxaServico}}%) ainda não está inclusa nesse valor.</small></p>
           </div>
@@ -58,6 +57,7 @@
 
     <!-- RESUMO DA RESERVA -->
     <div class="col-5">
+      <!-- <app-card-groups [dataGroups]="dataGroup2" [isOnlyOneCard]="true" [showValue]="false"></app-card-groups> -->
       <div [ngClass]="isScrollToFixed ? 'resumo__reserva-field-fixed' : 'resumo__reserva-field'">
         <div class="resumo__reserva-header text-center">
           <p class="h5 fw-bold">Resumo da Reserva</p>
@@ -113,30 +113,22 @@
         </div>
 
         <div class="resumo__reserva-section">
-          <div class="d-flex justify-content-between align-items-center mb-2">
+          <strong *ngIf="accessorys && accessorys.length > 0">Proteções</strong>
+          <div class="d-flex justify-content-between align-items-center mb-2" *ngFor="let value of accessorys">
             <div>
-              <strong>Proteções</strong> <br />
-              Proteção do carro<br />
-              22 diárias x R$ 28,00
+              {{ value.title }}<br/>
+              22 diárias x {{ value.value }}
             </div>
-            <p>R$ 616,00</p>
+            <p>R$ {{ value.value }}</p>
           </div>
 
-          <div class="d-flex justify-content-between align-items-center mb-2">
+          <strong *ngIf="additionals && additionals.length > 0">Adicionais</strong>
+          <div class="d-flex justify-content-between align-items-center mb-2" *ngFor="let value of additionals">
             <div>
-              Proteção do carro<br />
-              22 diárias x R$ 10,00
+              {{ value.title }}<br/>
+              {{ value.quantity }} und. x 1 diária x R$ {{ value.value }}
             </div>
-            <p class="text-center">R$ 220,00</p>
-          </div>
-
-          <div class="d-flex justify-content-between align-items-center mb-2">
-            <div>
-              <strong>Adicionais</strong> <br />
-              Bebê conforto<br />
-              1 und. x 1 diária x R$ 25,00
-            </div>
-            <p>R$ 25,00</p>
+            <p class="text-center">R$ {{ value.quantity * value.value }}</p>
           </div>
 
           <div class="d-flex justify-content-between align-items-center">

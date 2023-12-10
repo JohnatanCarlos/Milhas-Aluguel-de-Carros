@@ -1,5 +1,5 @@
 <div class="row">
-  <div class="col-12 col-md-6 col-lg-4 flip-card" *ngFor="let item of dataGroups; let i = index">
+  <div [ngClass]="isOnlyOneCard ? 'flip-card' : 'col-12 col-md-6 col-lg-4 flip-card'" *ngFor="let item of dataGroups; let i = index">
     <div class="flip-card-inner" [ngClass]="{'flipped': flippedCards[i]}">
       <!-- Conteúdo do cartão frontal -->
       <div class="flip-card-front">
@@ -35,7 +35,7 @@
               </p>
             </div>
 
-            <button mat-flat-button  color="primary" class="col-12 my-3" (click)="nextStep(item.id)">ESCOLHER GRUPO</button>
+            <button mat-flat-button *ngIf="!isOnlyOneCard" color="primary" class="col-12 my-3" (click)="nextStep(item.id)">ESCOLHER GRUPO</button>
 
             <button mat-button color="primary" (click)="flipCard(i)">Mostrar detalhes</button>
           </div>

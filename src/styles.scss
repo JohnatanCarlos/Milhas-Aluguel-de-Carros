@@ -111,6 +111,10 @@ $bv-theme: mat-light-theme($bv-palette-primary, $bv-palette-accent);
   margin-top: 40px;
 }
 
+.mat-button-base{
+  height: 50px;
+}
+
 // div {
 //   border: 1px solid red;
 // }

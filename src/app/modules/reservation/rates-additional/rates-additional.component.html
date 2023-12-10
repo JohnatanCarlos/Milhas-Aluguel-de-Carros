@@ -6,7 +6,7 @@
   <!-- Adicionais de proteçóes -->
   <div class="row py-3">
     <div class="col-12 p-0">
-      <app-card-additional [dataAdditional]="additionals" (totalAditional)="dataAccessory($event)"></app-card-additional>
+      <app-card-additional [dataAdditional]="additionals" (totalAditional)="setAccessory($event)"></app-card-additional>
     </div>
   </div>
 
@@ -14,7 +14,7 @@
   <div class="row">
     <h3>Adicione acessórios para sua praticidade e conforto (sujeitos a disponibilidade na agência)</h3>
     <div class="col-12  p-0">
-      <app-card-accessory [dataAccessory]="accessorys" (totalAccessory)="dataAccessory($event)"></app-card-accessory>
+      <app-card-accessory [dataAccessory]="accessorys" (totalAccessory)="setAdditional($event)"></app-card-accessory>
     </div>
   </div>
 </div>

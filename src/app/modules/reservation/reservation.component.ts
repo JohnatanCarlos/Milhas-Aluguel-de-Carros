@@ -1,7 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { EventService } from './services/event.service';
-import { ReservationService } from './services/reservation-http.service';
+import { ReservationHttpService } from './services/reservation-http.service';
 import { Router } from '@angular/router';
+import { ReservationService } from './services/reservation.service';
 
 @Component({
   selector: 'app-reservation',
@@ -14,12 +15,15 @@ export class ReservationComponent implements OnInit {
   items: any[];
   currentStep: number;
   dataGroup: any;
+  dataGroup2: any;
   isScrollToFixed = false;
+  additionals: any[] = [];
+  accessorys: any[] = [];
 
   constructor(
-    private router: Router,
     private reservationService: ReservationService,
-    private eventService: EventService
+    private reservationHttpService: ReservationHttpService,
+    private eventService: EventService,
   ) {}
 
   @HostListener('window:scroll', [])
@@ -39,16 +43,32 @@ export class ReservationComponent implements OnInit {
     ];
 
     this.getGroup(this.eventService.getGroupId());
+    this.listenerAdditional()
+    this.listenerAccessory()
   }
 
   getGroup(groupId: any): void {
     if(groupId) {
-      this.reservationService.getGroupById(groupId).subscribe(dataGroup => {
+      this.reservationHttpService.getGroupById(groupId).subscribe(dataGroup => {
         this.dataGroup = dataGroup;
+         // Transforme o objeto em um array de objetos para enviar ao componente
+         this.dataGroup2 = [dataGroup]
       });
     }else {
       // this.router.navigate([''])
     }
+  }
+
+  listenerAdditional() {
+    this.reservationService.getAdditionalsObservable().subscribe(res => {
+     this.additionals = res
+    })
+  }
+
+  listenerAccessory() {
+    this.reservationService.getAccessorysObservable().subscribe(res => {
+     this.accessorys = res
+    })
   }
 
 }
