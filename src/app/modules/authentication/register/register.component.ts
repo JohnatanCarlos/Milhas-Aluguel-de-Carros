@@ -9,14 +9,14 @@ export class RegisterComponent implements OnInit {
   items: any[];
   currentStep: number;
   countries: any[];
-
+  templates = ['step1', 'step2', 'step3'];
   // matcher = new MyErrorStateMatcher();
 
   constructor() {
     this.currentStep = 0;
     this.items = [
       {label: 'Dados Pessoais'},
-      {label: 'Confirmação do Cadastro'},
+      {label: 'Endereço'},
       {label: 'Conclusão do Cadastro'}
     ];
 
@@ -1747,4 +1747,14 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {}
+
+  onActiveIndexChange(event: number) {
+    this.currentStep = event;
+  }
+
+  nextStep(): void {
+    if(this.currentStep < 2) {
+      this.currentStep++;
+    }
+  }
 }

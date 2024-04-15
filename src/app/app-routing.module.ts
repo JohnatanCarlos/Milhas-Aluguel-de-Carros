@@ -25,6 +25,11 @@ const routes: Routes = [
     data: {disabledSearch: true}
   },
   {
+    path: 'register',
+    component: SignInComponent,
+    data: {disabledSearch: true}
+  },
+  {
     path: 'grupos-de-carros',
     component: GroupOfCarsComponent,
     data: {disabledSearch: true}

@@ -1,10 +1,16 @@
-<div class="container">
-  <p-steps [model]="items" [activeIndex]="currentStep"></p-steps>
-
-  <div class="row">
-    <h3>Selecione o melhor grupo de carro e tarifa para você</h3>
+<div class="container reservation-groups">
+  <div class="reservation-groups__steps">
+    <p-steps [model]="items" [activeIndex]="currentStep"></p-steps>
   </div>
 
-  <app-card-groups [dataGroups]="groupsAvailables"></app-card-groups>
+  <div class="row">
+    <h1>Escolha o grupo de carros que melhor te atende</h1>
+    <!-- <app-flip-card-vehicle [dataVehicle]="groupsAvailables" [isOnlyOneCard]="false" [showValue]="true"></app-flip-card-vehicle> -->
+  </div>
+
+
+  <div *ngIf="groupsAvailables.length">
+    <app-card-groups [dataGroups]="groupsAvailables"></app-card-groups>
+  </div>
 
 </div>

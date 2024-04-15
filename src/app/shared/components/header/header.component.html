@@ -1,29 +1,86 @@
-<div class="row header">
-  <div class="col-7 col-md-9 col-lg-2">
-    <img src="assets/imgs/logo_milhas_aluguel_de_carros_branco.png" alt="logo-minhas-aluguel-de-carros" routerLink="">
-  </div>
+<header class="container" [ngClass]="isOverlapSearch ? 'header' : 'header-overlap-search'">
+  <nav class="header__nav">
+    <div class="col-7 col-md-9 col-lg-2">
+      <img src="assets/imgs/logo_milhas_aluguel_de_carros_branco.png" alt="logo-minhas-aluguel-de-carros" routerLink="">
+    </div>
 
-  <nav class="col-8">
-    <a href="#" routerLink="/grupos-de-carros">GRUPO DE CARROS</a>
-    <a href="#">OFERTAS</a>
-    <a href="#">FIDELIDADE</a>
-    <a href="#">PARA EMPRESAS</a>
-    <a href="#">DÚVIDAS</a>
+    <ul class="col-8">
+      <li><a href="#" routerLink="/grupos-de-carros">GRUPO DE CARROS</a></li>
+      <li><a href="#">OFERTAS</a></li>
+      <li><a href="#">FIDELIDADE</a></li>
+      <li><a href="#">PARA EMPRESAS</a></li>
+      <li><a href="#">DÚVIDAS</a></li>
+    </ul>
+
+    <div class="col-5 col-md-3 col-lg-2 header__nav-access">
+      <div>
+        <i class="pi pi-car"></i>
+        MINHAS RESERVAS
+      </div>
+
+      <div routerLink="/login" routerLinkActive="router-link-active" >
+        <i class="pi pi-user"></i>
+        LOGIN
+      </div>
+
+      <div>
+        <i class="pi pi-bars"></i>
+      </div>
+    </div>
   </nav>
 
-  <div class="col-5 col-md-3 col-lg-2 header__right">
-    <div>
-      <i class="pi pi-car"></i>
-      MINHAS RESERVAS
-    </div>
+  <div class="header__search" *ngIf="!disabledSearch">
+    <div class="col-12">
+      <form>
+        <div class="row">
+          <mat-form-field appearance="fill" [ngClass]="showLabelDevolution ? 'col-lg-6' : 'col-lg-3'" class="col-12">
+            <mat-label>Digite o local de retirada{{!showLabelDevolution ? '': '/devolução'}}</mat-label>
+            <input matInput>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+            <!-- <mat-hint>Hint</mat-hint> -->
+          </mat-form-field>
 
-    <div routerLink="/login" routerLinkActive="router-link-active" >
-      <i class="pi pi-user"></i>
-      LOGIN
-    </div>
+          <mat-form-field appearance="fill" class="col-12 col-lg-3" *ngIf="!showLabelDevolution" >
+            <mat-label>Digite o local de devolução</mat-label>
+            <input matInput>
+            <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          </mat-form-field>
 
-    <div>
-      <i class="pi pi-bars"></i>
+          <mat-form-field appearance="fill" class="col-12 col-lg-3">
+            <mat-label>Período da locação</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+              <input matStartDate placeholder="Data retirada">
+              <input matEndDate placeholder="Data devolução">
+            </mat-date-range-input>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+          </mat-form-field>
+
+          <mat-form-field appearance="fill" class="col-12 col-lg-3">
+            <mat-label>Horário</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let option of times$ | async" [value]="option">{{option.exibicao}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+          <div class="col-12 d-flex justify-content-between align-items-center">
+            <div class="form-check form-switch text-white">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked
+                (click)="showHideLabelDevolution(showLabelDevolution)" />
+              <label class="form-check-label" for="flexSwitchCheckChecked"> DEVOLUÇÃO NA MESMA LOJA</label>
+            </div>
+
+            <button
+              mat-raised-button
+              color="primary"
+              routerLink="/reservas/passo-2"
+              routerLinkActive="router-link-active">
+              CONTINUAR
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
-</div>
+</header>
+

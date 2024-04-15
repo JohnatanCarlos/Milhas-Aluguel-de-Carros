@@ -32,6 +32,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "src/assets/my-icons/style.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/primeng/resources/primeng.min.css",
               "node_modules/primeng/resources/themes/md-light-indigo/theme.css",

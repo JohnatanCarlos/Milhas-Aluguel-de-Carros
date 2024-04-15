@@ -1,13 +1,57 @@
-<div class="container">
-  <p-steps [model]="items" [activeIndex]="currentStep"></p-steps>
-
-  <div class="row">
-    <h3>Tarifas e Adicionais</h3>
-  </div>
+<div class="container reservation">
+  <!-- <div class="reservation__steps">
+    <p-steps [model]="items" [activeIndex]="currentStep"></p-steps>
+  </div> -->
 
   <div class="row pb-5">
-    <div class="col-7">
-      <div class="row list-card">
+    <div class="col-12 col-lg-8">
+
+      <!-- <app-flip-card-vehicle *ngIf="dataGroup2" [dataVehicle]="dataGroup"></app-flip-card-vehicle> -->
+      <!-- <div class="flip-card" [class.flipped]="isFlipped">
+        <div class="flip-card-inner">
+          <div class="flip-card-front" (click)="flipCard()">
+            <div class="text-center">
+              <p><strong>{{dataGroup?.grupoVeiculo?.grupo}} - {{dataGroup?.grupoVeiculo?.nome}}</strong></p>
+
+              <p-carousel [value]="dataGroup?.grupoVeiculo?.veiculos" orientation="horizontal" [showNavigators]="false">
+                <ng-template let-veiculo pTemplate="dataGroup">
+                  <img src="{{ veiculo.urlImagem }}" alt="" width="100%" />
+                  <p>{{ veiculo.nome }}</p>
+                </ng-template>
+              </p-carousel>
+
+              <div class="mb-3">
+                <p class="h6 mb-2 text-decoration-underline">Sujeito à Disponibilidade</p>
+                <p class="mb-2">
+                  Veículo similar a:
+                  <span *ngFor="let item of dataGroup?.grupoVeiculo?.veiculos">{{item.nome}}, </span>
+                  dentre outros.
+                </p>
+                <p class="fw-lighter">
+                  <small>
+                    Sua reserva garante um dos carros desse grupo.<br />
+                      Modelo sujeito à disponibilidade da agência.
+                  </small>
+                </p>
+              </div>
+
+
+              <p><small>*A taxa de aluguel ({{dataGroup?.tarifa?.percentualTaxaServico}}%) ainda não está inclusa nesse valor.</small></p>
+            </div>
+          </div>
+
+          <div class="flip-card-back" (click)="flipCard()">
+            <div class="row">
+              <p><strong>{{dataGroup?.grupoVeiculo?.grupo}} - {{dataGroup?.grupoVeiculo?.nome}}</strong></p>
+
+              <app-details-groups *ngIf="dataGroup?.detalhes" [detailsGroup]="dataGroup?.detalhes"></app-details-groups>
+              <p>Esconder detalhes</p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- <div class="row list-card">
         <div class="col-6 card__vehicle">
           <div class="text-center">
             <p><strong>{{dataGroup?.grupoVeiculo?.grupo}} - {{dataGroup?.grupoVeiculo?.nome}}</strong></p>
@@ -45,22 +89,47 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
 
       <!-- ADICIONAIS -->
       <app-rates-additional></app-rates-additional>
 
-      <button mat-raised-button color="primary"> CONTINUAR </button>
+      <!-- <button mat-raised-button color="primary"> CONTINUAR </button> -->
     </div>
 
 
 
     <!-- RESUMO DA RESERVA -->
-    <div class="col-5">
+    <div class="col-12 col-lg-4 resumo__reserva">
       <!-- <app-card-groups [dataGroups]="dataGroup2" [isOnlyOneCard]="true" [showValue]="false"></app-card-groups> -->
-      <div [ngClass]="isScrollToFixed ? 'resumo__reserva-field-fixed' : 'resumo__reserva-field'">
+      <div class="resumo__reserva-field">
         <div class="resumo__reserva-header text-center">
           <p class="h5 fw-bold">Resumo da Reserva</p>
+        </div>
+
+        <div class="resumo__reserva-section">
+          <h2>{{dataGroup?.grupoVeiculo?.nome}}</h2>
+          <p>{{dataGroup?.grupoVeiculo?.grupo}}</p>
+
+          <p-carousel [value]="dataGroup?.grupoVeiculo?.veiculos" orientation="horizontal" [showNavigators]="false">
+            <ng-template let-veiculo pTemplate="dataGroup">
+              <img src="{{ veiculo.urlImagem }}" alt="" width="100%" />
+              <!-- <p>{{ veiculo.nome }}</p> -->
+            </ng-template>
+          </p-carousel>
+
+          <div class="mb-3">
+            <p class="mb-2">
+              <strong>
+                <span *ngFor="let item of dataGroup?.grupoVeiculo?.veiculos">{{item.nome}}, </span>
+                ou similar*.
+              </strong>
+            </p>
+            <p class="fw-lighter">
+              <small>*Sua reserva garante um dos modelos de carro acima, estando sujeito à disponibilidade da agência.
+              </small>
+            </p>
+          </div>
         </div>
 
         <div class="resumo__reserva-section">
@@ -142,6 +211,7 @@
           <p class="h1 fw-bold">R$ 2.907,52</p>
           <p class="fw-bold">Em até 6x de R$ 484,59</p>
         </div>
+        <button mat-raised-button color="primary" class="col-12"> CONTINUAR </button>
       </div>
     </div>
 

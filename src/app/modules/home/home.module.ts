@@ -1,18 +1,18 @@
-import { MatButtonModule } from '@angular/material/button';
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
+import { MatButtonModule } from '@angular/material/button';
+import { FooterModule } from 'app/shared/components/footer/footer.module';
+import { HeaderModule } from 'app/shared/components/header/header.module';
+import { ButtonModule } from 'primeng/button';
 
-import { SearchRentModule } from '../../shared/components/search-rent/search-rent.module';
 import { HomeComponent } from './home.component';
 import { AppCarouselModule } from './shared/components/carousel/carousel.module';
-import {ButtonModule} from 'primeng/button';
-import { FooterModule } from 'app/shared/components/footer/footer.module';
 
 @NgModule({
   declarations: [HomeComponent],
   imports: [
     CommonModule,
-    SearchRentModule,
+    HeaderModule,
     AppCarouselModule,
     FooterModule,
     MatButtonModule,

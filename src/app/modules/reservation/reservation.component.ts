@@ -16,9 +16,10 @@ export class ReservationComponent implements OnInit {
   currentStep: number;
   dataGroup: any;
   dataGroup2: any;
-  isScrollToFixed = false;
+  isScrollToFixed = true;
   additionals: any[] = [];
   accessorys: any[] = [];
+  isFlipped = false;
 
   constructor(
     private reservationService: ReservationService,
@@ -30,16 +31,16 @@ export class ReservationComponent implements OnInit {
   onWindowScroll() {
     // console.log(window.scrollY);
 
-    this.isScrollToFixed = window.scrollY >= 275 ? true : false;
+    this.isScrollToFixed = window.scrollY >= 0 ? true : false;
   }
 
   ngOnInit(): void {
     this.currentStep = 2;
     this.items = [
-      { label: 'Local, Data e Hora da Reserva' },
-      { label: 'Grupos de Carros' },
-      { label: 'Tarifas e Adicionais' },
-      { label: 'Dados Cadastrais e Pessoais ' },
+      { label: 'Localização e data' },
+      { label: 'Grupos de veículos' },
+      { label: 'Resumo da reserva' },
+      { label: 'Identificação' },
     ];
 
     this.getGroup(this.eventService.getGroupId());
@@ -47,10 +48,15 @@ export class ReservationComponent implements OnInit {
     this.listenerAccessory()
   }
 
+  flipCard(): void {
+    this.isFlipped = !this.isFlipped;
+  }
+
   getGroup(groupId: any): void {
     if(groupId) {
       this.reservationHttpService.getGroupById(groupId).subscribe(dataGroup => {
         this.dataGroup = dataGroup;
+        console.log(this.dataGroup)
          // Transforme o objeto em um array de objetos para enviar ao componente
          this.dataGroup2 = [dataGroup]
       });

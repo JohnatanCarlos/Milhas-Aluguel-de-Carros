@@ -1,59 +1,87 @@
 @import 'src/app/styles/main.scss';
 
-
 .header {
-  @include center;
-  background-color: $color-base-primary;
-  padding: 15px 30px;
+  padding: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  max-width: 1320px;
+  background-color: $color-background-dark;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 40px;
 
-  img {
-    width: 100%;
-    cursor: pointer;
-  }
-
-  > nav {
+  &__nav {
     @include center;
-  }
+    background-color: $color-base-primary;
+    padding: 15px 30px;
 
-  > nav > * {
-    color: $neutral-color-0;
-    text-decoration: none;
-    margin: 0 15px;
-  }
-
-  &__right {
-    > div {
-      display: flex;
-      align-items: center;
-      font-size: 13px;
-      padding: 5px 0;
-      color: $neutral-color-1;
+    img {
+      width: 100%;
       cursor: pointer;
     }
 
-    > div:nth-child(3)  {
-      display: none;
+    ul {
+      @include center;
+      margin: 0;
     }
 
-    div > i {
-      color: $color-base-emphasis;
-      font-size: 16px;
-      padding-right: 10px;
+    ul li a {
+      margin: 0 20px;
+      text-decoration: none;
+      color: $neutral-color-0;
+    }
+
+    &-access {
+      > div {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        padding: 5px 0;
+        color: $neutral-color-1;
+        cursor: pointer;
+      }
+
+      > div:nth-child(3)  {
+        display: none;
+      }
+
+      i {
+        color: $color-base-emphasis;
+        font-size: 16px;
+        padding-right: 10px;
+      }
+    }
+  }
+
+  &__search {
+    form {
+      margin: 15px;
     }
   }
 }
 
+.header-overlap-search {
+  position: relative;
+  padding: 0;
+  z-index: 1;
+  max-width: 1320px;
+  background-color: $color-background-dark;
+  border-radius: 0 0 20px 20px;
+  margin-bottom: 40px;
+}
+
 @media (max-width: 992px) {
-  .header {
+  .header__nav {
     img {
       width: 70%;
     }
 
-    > nav {
+    > ul {
       display: none;
     }
 
-    &__right {
+    &-access {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -73,19 +101,12 @@
   }
 }
 
-@media (max-width: 1200px) {
-  .header nav > * {
-    margin: 0 5px;
-  }
-}
-
 @media (max-width: 600px) {
-  .header {
+  .header__nav {
     padding: 15px 10px;
 
-    // img {
-    //   width: 120px;
-    // }
+    img {
+      width: 120px;
+    }
   }
 }
-

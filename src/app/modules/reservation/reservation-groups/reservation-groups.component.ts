@@ -33,10 +33,10 @@ export class ReservationGroupsComponent implements OnInit {
     this.listGroupsAvailables();
 
     this.items = [
-      { label: 'Local, Data e Hora da Reserva' },
-      { label: 'Grupos de Carros' },
-      { label: 'Tarifas e Adicionais' },
-      { label: 'Dados Cadastrais e Pessoais ' },
+      { label: 'Localização e data' },
+      { label: 'Grupos de veículos' },
+      { label: 'Resumo da reserva' },
+      { label: 'Identificação' },
     ];
   }
 
@@ -52,6 +52,7 @@ export class ReservationGroupsComponent implements OnInit {
   listGroupsAvailables(): void {
     this.reservationHttpService.getGroupsAvailable().subscribe(groups => {
       this.groupsAvailables = groups;
+      console.log(this.groupsAvailables)
     })
   }
 }

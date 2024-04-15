@@ -113,12 +113,19 @@ $bv-theme: mat-light-theme($bv-palette-primary, $bv-palette-accent);
 
 .mat-button-base{
   height: 50px;
+  // color: $color-text-bg-light-default !important;
 }
 
-// div {
-//   border: 1px solid red;
-// }
+.p-steps-title {
+  font-size: 12px;
+}
 
+h1,h2,h3,h4,h5,h6 {
+  // font-family: LocalizaDinDisplay_Bold,OpenSans,Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-weight: 700 !important;
+  line-height: 1.1;
+  // margin: 0 !important;
+}
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

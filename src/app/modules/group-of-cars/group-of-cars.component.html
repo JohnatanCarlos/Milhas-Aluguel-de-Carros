@@ -2,5 +2,5 @@
 
   <h3>Grupos de Carros</h3>
 
-  <app-card-groups [dataGroups]="groups" [showValue]="false"></app-card-groups>
+  <app-card-groups *ngIf="groups" [dataGroups]="groups" [showValue]="false"></app-card-groups>
 </div>

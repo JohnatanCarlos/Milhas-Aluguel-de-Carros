@@ -1,18 +1,8 @@
 <div class="container-fluid home">
-  <!-- FORMULARIO DE BUSCA -->
-  <!-- <div class="container home__search-rent">
-    <app-search-rent></app-search-rent>
-  </div> -->
-
-  <!-- BANNER VIDEO DESKTOP-->
-  <div class="carousel slide home__search-rent" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active home__movie">
-        <video autoplay muted loop>
-          <source src="./../../../assets/movies/comercial_banner.webm" type="video/webm" />
-        </video>
-      </div>
-    </div>
+  <div class="home__banner">
+    <video autoplay muted loop>
+      <source src="./../../../assets/movies/comercial_banner.webm" type="video/webm"/>
+    </video>
   </div>
 
   <!-- CONHEÇA NOSSA FROTA -->
@@ -27,37 +17,36 @@
   </div> -->
 
   <!-- SAIBA MAIS -->
-  <div class="container-fluid know-more">
-    <div class="container">
-      <div class="row">
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 know-more__miles">
-          <div class="know-more__circle">
-            <i class="pi pi-ticket" style="font-size: 3rem;"></i>
-          </div>
-          <div>
-            <p>PROGRAMA MILHAS</p>
-            <p>O JEITO MAIS SIMPLES DE ECONOMIZAR NAS PROXIMAS VIAGENS</p>
-
-            <p class="know-more__miles-link">SAIBA MAIS</p>
-          </div>
+  <div class="container know-more">
+    <div class="row">
+      <div class="col know-more__miles">
+        <div class="know-more__circle">
+          <i class="pi pi-ticket" style="font-size: 3rem"></i>
         </div>
+        <div>
+          <p><strong>Programa Milhas</strong></p>
+          <p>O jeito mais simples de economizar nas próximas viagens.</p>
 
-        <div class="col-12 col-sm-12 col-md-12 col-lg-6 know-more__miles">
-          <div class="know-more__circle">
-            <i class="pi pi-shield" style="font-size: 3rem;"></i>
-          </div>
-          <div>
-            <p>RETIRADA RAPIDA</p>
-            <p>O JEITO MAIS RÁPIDO E SEGURO DE RETIRAR UM CARRO​​ ONDE VOCE ESTIVER</p>
-
-            <p class="know-more__miles-link">SAIBA MAIS</p>
-          </div>
+          <p class="know-more__miles-link">Saiba mais</p>
         </div>
+      </div>
 
+      <div class="col know-more__miles">
+        <div class="know-more__circle">
+          <i class="pi pi-shield" style="font-size: 3rem"></i>
+        </div>
+        <div>
+          <p><strong>Retirada Rapida</strong></p>
+          <p>
+            O jeito mais rápido e seguro de retirar um carro​​ onde você
+            estiver!
+          </p>
+
+          <p class="know-more__miles-link">Saiba mais</p>
+        </div>
       </div>
     </div>
   </div>
-
 
   <!-- DESTINOS PARA DESCOBRIR -->
   <!-- <div class="container-fluid meet-fleet">
@@ -69,6 +58,7 @@
     </div>
   </div> -->
 
-  <app-footer></app-footer>
+
+
 
 </div>

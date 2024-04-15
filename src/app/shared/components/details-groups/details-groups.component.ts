@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-details-groups',
@@ -10,7 +11,7 @@ export class DetailsGroupsComponent implements OnInit {
 
   allDetails = [
     {
-      icon: 'pi-hashtag',
+      icon: 'icon-door',
       descricao: '4 portas',
       codigoAcessorio: 1
     },
@@ -61,6 +62,7 @@ export class DetailsGroupsComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
+    console.log(this.detailsGroup)
     this.details = this.allDetails.filter(detail => {
       return this.detailsGroup.some(detailGroup => detailGroup.codigoAcessorio === detail.codigoAcessorio);
     });

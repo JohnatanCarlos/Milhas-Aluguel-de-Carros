@@ -1,20 +1,16 @@
 
 <div class="rater-additional" *ngIf="isShowAdditional">
   <h1>Deixe seu aluguel ainda mais completo</h1>
-  <h3>Fique livre de preocupações! Conheça e inclua os nossos adicionais na sua reserva</h3>
 
   <!-- Adicionais de proteçóes -->
-  <div class="row py-3">
-    <div class="col-12 p-0">
-      <app-card-additional [dataAdditional]="additionals" (totalAditional)="setAccessory($event)"></app-card-additional>
-    </div>
+  <div class="col-12 py-3">
+    <h3>Fique livre de preocupações! Conheça e inclua os nossos adicionais na sua reserva</h3>
+    <app-card-additional [dataAdditional]="additionals" (totalAditional)="setAccessory($event)"></app-card-additional>
   </div>
 
   <!-- Acessórios -->
-  <div class="row">
+  <div class="col-12  p-0">
     <h3>Adicione acessórios para sua praticidade e conforto (sujeitos a disponibilidade na agência)</h3>
-    <div class="col-12  p-0">
-      <app-card-accessory [dataAccessory]="accessorys" (totalAccessory)="setAdditional($event)"></app-card-accessory>
-    </div>
+    <app-card-accessory [dataAccessory]="accessorys" (totalAccessory)="setAdditional($event)"></app-card-accessory>
   </div>
 </div>
