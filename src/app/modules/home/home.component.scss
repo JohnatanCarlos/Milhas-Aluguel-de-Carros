@@ -7,8 +7,6 @@
 }
 
 .home {
-  // position: absolute;
-  // top: 0px;
   z-index: -1;
 
   &__banner {
@@ -41,7 +39,6 @@
 }
 
 .know-more {
-  // background-color: $neutral-color-1;
   color: $color-base-primary;
 
   &__miles {
@@ -51,7 +48,6 @@
 
     &-link {
       font-weight: bold;
-      // font-style: italic;
       text-decoration: underline;
       color: $color-background-dark;
       cursor: pointer;

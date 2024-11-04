@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { ReservationGroupsComponent } from './reservation-groups/reservation-groups.component';
 import { DetailsGroupsModule } from 'app/shared/components/details-groups/details-groups.module';
 import { CardGroupsModule } from 'app/shared/components/card-groups/card-groups.module';
+import { ReservationSummaryComponent } from './reservation-summary/reservation-summary.component';
 
 @NgModule({
   imports: [
@@ -30,7 +31,7 @@ import { CardGroupsModule } from 'app/shared/components/card-groups/card-groups.
     DetailsGroupsModule
   ],
   exports: [ReservationComponent, ReservationGroupsComponent, RatesAdditionalComponent],
-  declarations: [ReservationComponent, ReservationGroupsComponent, RatesAdditionalComponent],
+  declarations: [ReservationComponent, ReservationGroupsComponent, RatesAdditionalComponent, ReservationSummaryComponent],
   providers: [],
 })
 export class ReservationModule {}

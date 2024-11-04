@@ -1,0 +1,129 @@
+<!-- RESUMO DA RESERVA -->
+<div class="reservation-summary">
+  <!-- <app-card-groups [dataGroups]="dataGroup2" [isOnlyOneCard]="true" [showValue]="false"></app-card-groups> -->
+  <div class="reservation-summary__field">
+    <div class="reservation-summary__header text-center">
+      <p class="h5 fw-bold">Resumo da Reserva</p>
+    </div>
+
+    <div class="reservation-summary__section">
+      <h2>{{ dataGroup?.grupoVeiculo?.nome }}</h2>
+      <p>{{ dataGroup?.grupoVeiculo?.grupo }}</p>
+
+      <p-carousel
+        [value]="dataGroup?.grupoVeiculo?.veiculos"
+        orientation="horizontal"
+        [showNavigators]="false"
+      >
+        <ng-template let-veiculo pTemplate="dataGroup">
+          <img src="{{ veiculo.urlImagem }}" alt="" width="100%" />
+          <!-- <p>{{ veiculo.nome }}</p> -->
+        </ng-template>
+      </p-carousel>
+
+      <div class="mb-3">
+        <p class="mb-2">
+          <strong>
+            <span *ngFor="let item of dataGroup?.grupoVeiculo?.veiculos"
+              >{{ item.nome }},
+            </span>
+            ou similar*.
+          </strong>
+        </p>
+        <p class="fw-lighter">
+          <small
+            >*Sua reserva garante um dos modelos de carro acima, estando sujeito
+            à disponibilidade da agência.
+          </small>
+        </p>
+      </div>
+    </div>
+
+    <div class="reservation-summary__section">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <p class="h6">Retirada</p>
+          <strong>30 de Junho de 2022 às 16:00</strong> <br />
+          Ag Aerop Recife Aluguel Mensal
+        </div>
+        <p class="reservation-summary__text_underline">Editar</p>
+      </div>
+    </div>
+    <p-divider></p-divider>
+
+    <div class="reservation-summary__section">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <p class="h6">Develução</p>
+          <strong>12 de Junho de 2022 às 16:00</strong> <br />
+          Ag Aerop Recife Aluguel Mensal
+        </div>
+        <p class="reservation-summary__text_underline">Editar</p>
+      </div>
+    </div>
+    <p-divider></p-divider>
+
+    <div class="reservation-summary__section">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <p class="h6">Grupo</p>
+          <strong>Grupo B - Compacto Com Ar</strong> <br />
+          Renault Kwid 1.0 ou similar
+        </div>
+        <p class="reservation-summary__text_underline">Editar</p>
+      </div>
+    </div>
+    <p-divider></p-divider>
+
+    <div class="reservation-summary__section">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <strong>Diárias</strong><br />
+          22x R$80,00
+        </div>
+        <p>
+          <strong>Total</strong><br />
+          R$ 1.760.00
+        </p>
+      </div>
+    </div>
+
+    <div class="reservation-summary__section">
+      <strong *ngIf="accessorys && accessorys.length > 0">Proteções</strong>
+      <div
+        class="d-flex justify-content-between align-items-center mb-2"
+        *ngFor="let value of accessorys"
+      >
+        <div>
+          {{ value.title }}<br />
+          22 diárias x {{ value.value }}
+        </div>
+        <p>R$ {{ value.value }}</p>
+      </div>
+
+      <strong *ngIf="additionals && additionals.length > 0">Adicionais</strong>
+      <div
+        class="d-flex justify-content-between align-items-center mb-2"
+        *ngFor="let value of additionals"
+      >
+        <div>
+          {{ value.title }}<br />
+          {{ value.quantity }} und. x 1 diária x R$ {{ value.value }}
+        </div>
+        <p class="text-center">R$ {{ value.quantity * value.value }}</p>
+      </div>
+
+      <div class="d-flex justify-content-between align-items-center">
+        <div>Taxa de aluguel ( 12% )</div>
+        <p>R$ 311,52</p>
+      </div>
+    </div>
+
+    <div class="reservation-summary__footer text-end">
+      <p class="fw-bold">Valor total previsto</p>
+      <p class="h1 fw-bold">R$ 2.907,52</p>
+      <p class="fw-bold">Em até 6x de R$ 484,59</p>
+    </div>
+    <button mat-raised-button color="primary" class="col-12">CONTINUAR</button>
+  </div>
+</div>

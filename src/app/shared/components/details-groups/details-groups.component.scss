@@ -1,15 +1,6 @@
 @import 'src/app/styles/main.scss';
 
-.accordion-btn {
-  @include center-between;
-
-  background-color: transparent;
-  border: solid 1px #e2e1e1;
-  padding: 10px;
-  width: 100%;
-}
-
-.accordion-card {
+.details-groups {
   display: flex;
   align-items: center;
   flex-wrap: nowrap;

@@ -1,0 +1,46 @@
+@import 'src/app/styles/main.scss';
+
+.reservation-summary {
+  display: flex;
+  justify-content: flex-end;
+
+  &__field {
+    max-width: 380px;
+    box-shadow: -3px 0 10px rgba(128, 128, 128, 0.312);
+
+    &__fixed {
+      @extend .reservation-summary__field;
+      position: fixed;
+      z-index: 1;
+      bottom: 10px;
+    }
+  }
+
+  &__section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+    color: $neutral-color-3;
+    padding: 10px 30px;
+  }
+
+  &__text_underline {
+    color: $color-base-primary;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  &__header {
+    padding: 18px;
+    border-radius: 10px 10px 0 0;
+    color: $neutral-color-0;
+    background-color: $color-base-primary;
+  }
+
+  &__footer {
+    @extend .reservation-summary__header;
+    border-radius: 0 0 10px 10px !important;
+
+  }
+}

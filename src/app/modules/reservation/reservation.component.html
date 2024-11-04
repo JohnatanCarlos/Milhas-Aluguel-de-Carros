@@ -5,52 +5,6 @@
 
   <div class="row pb-5">
     <div class="col-12 col-lg-8">
-
-      <!-- <app-flip-card-vehicle *ngIf="dataGroup2" [dataVehicle]="dataGroup"></app-flip-card-vehicle> -->
-      <!-- <div class="flip-card" [class.flipped]="isFlipped">
-        <div class="flip-card-inner">
-          <div class="flip-card-front" (click)="flipCard()">
-            <div class="text-center">
-              <p><strong>{{dataGroup?.grupoVeiculo?.grupo}} - {{dataGroup?.grupoVeiculo?.nome}}</strong></p>
-
-              <p-carousel [value]="dataGroup?.grupoVeiculo?.veiculos" orientation="horizontal" [showNavigators]="false">
-                <ng-template let-veiculo pTemplate="dataGroup">
-                  <img src="{{ veiculo.urlImagem }}" alt="" width="100%" />
-                  <p>{{ veiculo.nome }}</p>
-                </ng-template>
-              </p-carousel>
-
-              <div class="mb-3">
-                <p class="h6 mb-2 text-decoration-underline">Sujeito à Disponibilidade</p>
-                <p class="mb-2">
-                  Veículo similar a:
-                  <span *ngFor="let item of dataGroup?.grupoVeiculo?.veiculos">{{item.nome}}, </span>
-                  dentre outros.
-                </p>
-                <p class="fw-lighter">
-                  <small>
-                    Sua reserva garante um dos carros desse grupo.<br />
-                      Modelo sujeito à disponibilidade da agência.
-                  </small>
-                </p>
-              </div>
-
-
-              <p><small>*A taxa de aluguel ({{dataGroup?.tarifa?.percentualTaxaServico}}%) ainda não está inclusa nesse valor.</small></p>
-            </div>
-          </div>
-
-          <div class="flip-card-back" (click)="flipCard()">
-            <div class="row">
-              <p><strong>{{dataGroup?.grupoVeiculo?.grupo}} - {{dataGroup?.grupoVeiculo?.nome}}</strong></p>
-
-              <app-details-groups *ngIf="dataGroup?.detalhes" [detailsGroup]="dataGroup?.detalhes"></app-details-groups>
-              <p>Esconder detalhes</p>
-            </div>
-          </div>
-        </div>
-      </div> -->
-
       <!-- <div class="row list-card">
         <div class="col-6 card__vehicle">
           <div class="text-center">
@@ -93,15 +47,14 @@
 
       <!-- ADICIONAIS -->
       <app-rates-additional></app-rates-additional>
-
-      <!-- <button mat-raised-button color="primary"> CONTINUAR </button> -->
     </div>
 
-
-
     <!-- RESUMO DA RESERVA -->
-    <div class="col-12 col-lg-4 resumo__reserva">
-      <!-- <app-card-groups [dataGroups]="dataGroup2" [isOnlyOneCard]="true" [showValue]="false"></app-card-groups> -->
+    <div class="col-12 col-lg-4">
+      <app-reservation-summary [dataGroup]="dataGroup" [accessorys]="accessorys" [additionals]="additionals"></app-reservation-summary>
+    </div>
+
+    <!-- <div class="col-12 col-lg-4 resumo__reserva">
       <div class="resumo__reserva-field">
         <div class="resumo__reserva-header text-center">
           <p class="h5 fw-bold">Resumo da Reserva</p>
@@ -114,7 +67,6 @@
           <p-carousel [value]="dataGroup?.grupoVeiculo?.veiculos" orientation="horizontal" [showNavigators]="false">
             <ng-template let-veiculo pTemplate="dataGroup">
               <img src="{{ veiculo.urlImagem }}" alt="" width="100%" />
-              <!-- <p>{{ veiculo.nome }}</p> -->
             </ng-template>
           </p-carousel>
 
@@ -213,7 +165,7 @@
         </div>
         <button mat-raised-button color="primary" class="col-12"> CONTINUAR </button>
       </div>
-    </div>
+    </div> -->
 
   </div>
 </div>
