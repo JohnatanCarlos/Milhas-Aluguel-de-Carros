@@ -16,4 +16,8 @@ export class ReservationHttpService {
     return this.http.get(`${this.URL}/groupsAvailable/${id}`);
   }
 
+  getGroupsVehicleAvailable(): Observable<any> {
+    return this.http.get('http://localhost:8080/agency');
+  }
+
 }

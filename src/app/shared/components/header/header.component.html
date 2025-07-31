@@ -1,7 +1,14 @@
-<header class="container" [ngClass]="isOverlapSearch ? 'header' : 'header-overlap-search'">
+<header
+  class="container"
+  [ngClass]="isOverlapSearch ? 'header' : 'header-overlap-search'"
+>
   <nav class="header__nav">
     <div class="col-7 col-md-9 col-lg-2">
-      <img src="assets/imgs/logo_milhas_aluguel_de_carros_branco.png" alt="logo-minhas-aluguel-de-carros" routerLink="">
+      <img
+        src="assets/imgs/logo_milhas_aluguel_de_carros_branco.png"
+        alt="logo-minhas-aluguel-de-carros"
+        routerLink=""
+      />
     </div>
 
     <ul class="col-8">
@@ -18,7 +25,7 @@
         MINHAS RESERVAS
       </div>
 
-      <div routerLink="/login" routerLinkActive="router-link-active" >
+      <div routerLink="/login" routerLinkActive="router-link-active">
         <i class="pi pi-user"></i>
         LOGIN
       </div>
@@ -31,50 +38,93 @@
 
   <div class="header__search" *ngIf="!disabledSearch">
     <div class="col-12">
-      <form>
+      <form [formGroup]="formSearch">
         <div class="row">
-          <mat-form-field appearance="fill" [ngClass]="showLabelDevolution ? 'col-lg-6' : 'col-lg-3'" class="col-12">
-            <mat-label>Digite o local de retirada{{!showLabelDevolution ? '': '/devolução'}}</mat-label>
-            <input matInput>
+          <mat-form-field
+            appearance="fill"
+            [ngClass]="showLabelDevolution ? 'col-lg-6' : 'col-lg-3'"
+            class="col-12"
+          >
+            <mat-label
+              >Digite o local de retirada{{
+                !showLabelDevolution ? "" : "/devolução"
+              }}</mat-label
+            >
+            <input
+              matInput
+              formControlName="agencyDeparture"
+              [matAutocomplete]="auto"
+            />
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let option of agencies" [value]="option">
+                {{ option.address.city }} | {{ option.name }}
+              </mat-option>
+            </mat-autocomplete>
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
             <!-- <mat-hint>Hint</mat-hint> -->
           </mat-form-field>
 
-          <mat-form-field appearance="fill" class="col-12 col-lg-3" *ngIf="!showLabelDevolution" >
+          <mat-form-field
+            appearance="fill"
+            class="col-12 col-lg-3"
+            *ngIf="!showLabelDevolution"
+          >
             <mat-label>Digite o local de devolução</mat-label>
-            <input matInput>
+            <input matInput formControlName="agencyReturn" [matAutocomplete]="auto"/>
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let option of agencies" [value]="option">
+                {{ option.address.city }} | {{ option.name }}
+              </mat-option>
+            </mat-autocomplete>
             <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
           </mat-form-field>
 
           <mat-form-field appearance="fill" class="col-12 col-lg-3">
             <mat-label>Período da locação</mat-label>
             <mat-date-range-input [rangePicker]="picker">
-              <input matStartDate placeholder="Data retirada">
-              <input matEndDate placeholder="Data devolução">
+              <input matStartDate placeholder="Data retirada" formControlName="dateDeparture"/>
+              <input matEndDate placeholder="Data devolução" formControlName="dateReturn"/>
             </mat-date-range-input>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker-toggle
+              matSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
             <mat-date-range-picker #picker></mat-date-range-picker>
           </mat-form-field>
 
           <mat-form-field appearance="fill" class="col-12 col-lg-3">
             <mat-label>Horário</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let option of times$ | async" [value]="option">{{option.exibicao}}</mat-option>
+            <mat-select formControlName="time">
+              <mat-option
+                *ngFor="let option of horariosLocacao"
+                [value]="option"
+                >{{ option.exibicao }}</mat-option
+              >
             </mat-select>
           </mat-form-field>
 
           <div class="col-12 d-flex justify-content-between align-items-center">
             <div class="form-check form-switch text-white">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckChecked" checked
-                (click)="showHideLabelDevolution(showLabelDevolution)" />
-              <label class="form-check-label" for="flexSwitchCheckChecked"> DEVOLUÇÃO NA MESMA LOJA</label>
+              <input
+                class="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckChecked"
+                checked
+                (click)="showHideLabelDevolution(showLabelDevolution)"
+                formControlName="isAgencyReturn"
+              />
+              <label class="form-check-label" for="flexSwitchCheckChecked">
+                DEVOLUÇÃO NA MESMA LOJA</label
+              >
             </div>
 
             <button
               mat-raised-button
               color="primary"
               routerLink="/reservas/passo-2"
-              routerLinkActive="router-link-active">
+              routerLinkActive="router-link-active"
+            >
               CONTINUAR
             </button>
           </div>
@@ -83,4 +133,3 @@
     </div>
   </div>
 </header>
-

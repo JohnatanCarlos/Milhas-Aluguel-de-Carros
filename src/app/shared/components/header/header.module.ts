@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
 import { MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -18,6 +19,8 @@ import { HeaderComponent } from './header.component';
     declarations: [HeaderComponent],
     imports: [
       CommonModule,
+      FormsModule,
+      ReactiveFormsModule,
       RouterModule,
       InputTextModule,
       FormsModule,
@@ -29,10 +32,11 @@ import { HeaderComponent } from './header.component';
       MatSelectModule,
       MatInputModule,
       MatIconModule,
+      MatAutocompleteModule
     ],
     exports: [HeaderComponent],
     providers: [
-      {provide: MAT_DATE_LOCALE, useValue: 'pt-BR'},
+      { provide: MAT_DATE_LOCALE, useValue: 'pt-BR' },
     ],
 })
 export class HeaderModule { }

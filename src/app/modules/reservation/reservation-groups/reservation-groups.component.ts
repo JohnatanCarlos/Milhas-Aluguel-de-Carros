@@ -30,7 +30,10 @@ export class ReservationGroupsComponent implements OnInit {
 
   ngOnInit(): void {
     this.currentStep = 1;
-    this.listGroupsAvailables();
+    this.reservationHttpService.getGroupsVehicleAvailable().subscribe(res => {
+      console.log(res)
+    })
+    // this.listGroupsAvailables();
 
     this.items = [
       { label: 'Localização e data' },
